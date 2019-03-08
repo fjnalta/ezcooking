@@ -13,10 +13,36 @@
     </ul>
     <ul class="navbar-nav navbar-right">
         <li class="nav-item dropdown">
+            <!-- TODO - switch label in js if item is selected -->
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                suche Gericht nach
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <button class="dropdown-item" type="button">Benutzer</button>
+                <button class="dropdown-item" type="button">Genre</button>
+                <button class="dropdown-item" type="button">Munchies</button>
+                <button class="dropdown-item" type="button">Tageszeit</button>
+            </div>
+        </li>
+        <!-- use css to create spacing between buttons -->
+        <div id="spacing-nav"></div>
+        <li class="nav-item dropdown">
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
         </li>
+        <!-- use css to create spacing between buttons -->
+        <div id="spacing-nav"></div>
+        <% if(session) { %>
+        <li class="nav-item">
+            <button class="btn btn-danger" type="button" id="logoutBtn">Logout</button>
+        </li>
+        <% } else{ %>
+        <li class="nav-item">
+            <% include ../modals/login-modal.ejs %>
+        </li>
+        <% } %>
     </ul>
 </nav>

@@ -1,6 +1,6 @@
 // Imports
 const express = require('express');
-//var session = require('express-session');
+const session = require('express-session');
 const bodyParser = require('body-parser');
 const path = require('path');
 const routes = require('./lib/router.js');
@@ -20,11 +20,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 // Session stuff
-//app.use(session({
-//    secret: 'adfiSHDFuhas7',
-//    resave: false,
-//    saveUninitialized: true
-//}));
+app.use(session({
+   secret: 'adfiSHDFuhas7',
+   resave: false,
+   saveUninitialized: true
+}));
 
 // Set static paths
 app.use('/public', express.static('public'));
