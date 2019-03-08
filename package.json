@@ -1,0 +1,25 @@
+{
+  "name": "ezcooking",
+  "version": "0.0.1",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.ezlife.eu/ajo/ezcooking.git"
+  },
+  "author": "Philipp Minges, Jean-Paul Cloedy",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "express-validator": "^5.3.1",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.7",
+    "tether": "^1.4.5"
+  }
+}
