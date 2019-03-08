@@ -30,7 +30,7 @@ https://localhost:3000
 ```
 
 ## Documentation
-[Installation](https://gitlab.ezlife.eu/ajo/ezcooking/blob/master/doc/Installation.md)
-[Routes](https://gitlab.ezlife.eu/ajo/ezcooking/blob/master/doc/Routes.md)
+- [Installation](https://gitlab.ezlife.eu/ajo/ezcooking/blob/master/doc/Installation.md)
+- [Routes](https://gitlab.ezlife.eu/ajo/ezcooking/blob/master/doc/Routes.md)
 
 ## About
