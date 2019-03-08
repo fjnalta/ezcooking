@@ -24,8 +24,9 @@ app.use(bodyParser.urlencoded({extended: true}));
 //    saveUninitialized: true
 //}));
 
-// Set static path
+// Set static paths
 app.use('/public', express.static('public'));
+app.use('/node_modules', express.static('node_modules'));
 
 // Set routes
 app.use('/', routes);
