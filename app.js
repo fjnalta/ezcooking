@@ -1,0 +1,36 @@
+// Imports
+const express = require('express');
+//var session = require('express-session');
+const bodyParser = require('body-parser');
+const path = require('path');
+const routes = require('./lib/router.js');
+const config = require('./config');
+
+// Setup Express
+const app = express();
+
+// Use EJS as View Engine
+app.set('view engine','ejs');
+app.set('views',path.join(__dirname, 'views'));
+
+// Bodyparser for JSON and FileUpload
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
+
+// Session stuff
+//app.use(session({
+//    secret: 'adfiSHDFuhas7',
+//    resave: false,
+//    saveUninitialized: true
+//}));
+
+// Set static path
+app.use('/public', express.static('public'));
+
+// Set routes
+app.use('/', routes);
+
+// Start server
+app.listen(config.port,function () {
+    console.log('Server started at Port ' + config.port);
+});
