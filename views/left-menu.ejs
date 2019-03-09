@@ -1,9 +1,39 @@
 <!-- show login/register menu item if not logged in -->
-<% if(!session) { %>
 <div class="list-group">
-    <li class="list-group-item list-group-item-dark">Menü</li>
-    <button type="button" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#loginModal">Login</button>
+    <% if(!session) { %>
+    <button type="button" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#loginModal">Login<span
+            class="badge badge-primary float-right">
+            <%=username %></span></button>
     <button type="button" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#registerModal">Register</button>
+</div>
+<br>
+<div class="list-group">
+    <button type="button" class="list-group-item list-group-item-action">Durchsuchen</button>
+    <% } else { %>
+    <li class="list-group-item list-group">Eingeloggt als: <span class="badge badge-primary float-right">
+            <%=username %></span></li>
+    <button class="btn btn-success" type="button" id="logoutBtn" href="/dishes"">Gericht hinzufügen</button>
+</div>
+<br>
+<div class="
+        list-group">
+        <li class="list-group-item list-group-item-dark">menü</li>
+        <button type="button" class="list-group-item list-group-item-action">Home</button>
+        <button type="button" class="list-group-item list-group-item-action">Durchsuchen</button>
+        <button type="button" class="list-group-item list-group-item-action">Profil</button>
+        <button type="button" class="list-group-item list-group-item-action">Einstellungen</button>
+        <button class="btn btn-danger" type="button" id="logoutBtn" onclick="logout()">Logout</button>
+        <% } %>
+</div>
+<br>
+
+<% if(session) { %>
+<!-- mockup my dishes -->
+<div class="list-group">
+    <li class="list-group-item list-group-item-dark">meine Favoriten</li>
+    <button type="button" class="list-group-item list-group-item-action">Gericht 1</button>
+    <button type="button" class="list-group-item list-group-item-action">Gericht 2</button>
+    <button type="button" class="list-group-item list-group-item-action">Gericht 3</button>
 </div>
 <br>
 <% } %>
@@ -24,40 +54,12 @@
     <button type="button" class="list-group-item list-group-item-action">Gericht 3</button>
 </div>
 <br>
-<% if(session) { %>
-<!-- mockup my dishes -->
-<div class="list-group">
-    <li class="list-group-item list-group-item-dark">meine Favoriten</li>
-    <button type="button" class="list-group-item list-group-item-action">Gericht 1</button>
-    <button type="button" class="list-group-item list-group-item-action">Gericht 2</button>
-    <button type="button" class="list-group-item list-group-item-action">Gericht 3</button>
-</div>
-<br>
-<% } %>
-<div class="list-group">
-    <img src="../public/img/default.jpg" alt="..." class="img-thumbnail">
-</div>
-<br>
-<div class="list-group">
-    <img src="../public/img/default.jpg" alt="..." class="img-thumbnail">
-</div>
-<br>
-<div class="list-group">
-    <img src="../public/img/default.jpg" alt="..." class="img-thumbnail">
-</div>
-<br>
-<!-- mockup user menu-->
-<div class="list-group">
-    <li class="list-group-item list-group-item-dark">Mein Account</li>
-    <li class="list-group-item list-group">Eingeloggt als <span class="badge badge-primary float-right">
-            <%=username %></span></li>
-    <% if(session) { %>
-    <button type="button" class="list-group-item list-group-item-action">Profil</button>
-    <button type="button" class="list-group-item list-group-item-action">Einstellungen</button>
-    <button class="btn btn-danger" type="button" id="logoutBtn">Logout</button>
-    <% } else { %>
-    <button type="button" class="list-group-item list-group-item-action disabled">Profil</button>
-    <button type="button" class="list-group-item list-group-item-action disabled">Einstellungen</button>
 
-    <% } %>
+<div class="list-group">
+    <img src="../public/img/default.jpg" alt="..." class="img-thumbnail">
 </div>
+<br>
+<div class="list-group">
+    <img src="../public/img/default.jpg" alt="..." class="img-thumbnail">
+</div>
+<br>
