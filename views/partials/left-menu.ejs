@@ -8,11 +8,11 @@
 </div>
 <br>
 <div class="list-group">
-    <button type="button" class="list-group-item list-group-item-action">Durchsuchen</button>
+    <a href="/browse" class="list-group-item list-group-item-action">Durchsuchen</a>
     <% } else { %>
     <li class="list-group-item list-group">Eingeloggt als: <span class="badge badge-primary float-right">
             <%=session.username %></span></li>
-    <button class="btn btn-success" type="button" id="logoutBtn" href="/browse"">Gericht hinzufügen</button>
+    <a href="/dish" class="btn btn-success">Gericht hinzufügen</a>
 </div>
 <br>
 <div class="

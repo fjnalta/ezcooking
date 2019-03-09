@@ -1,0 +1,29 @@
+<!-- include static header -->
+<% include partials/header.ejs %>
+
+<!-- dynamic main content -->
+<div class="container">
+    <!-- move the content one row down -->
+    <br>
+    <!-- everything in this div in one row -->
+    <div class="row">
+        <!-- left menu -->
+        <div class="col-3">
+            <!-- include left menu -->
+            <% include partials/left-menu.ejs %>
+        </div>
+
+        <!-- main content -->
+        <div class="col-9">
+            <!-- include main content -->
+            <% include partials/content/content-error.ejs %>
+        </div>
+    </div>
+
+</div>
+<!-- spacing between content and footer -->
+<br>
+<!-- include static footer -->
+<% include partials/footer.ejs %>
+<!-- spacing at content end -->
+<br>
