@@ -3,7 +3,7 @@
     <% if(!session) { %>
     <button type="button" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#loginModal">Login<span
             class="badge badge-primary float-right">
-            <%=username %></span></button>
+            guest</span></button>
     <button type="button" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#registerModal">Register</button>
 </div>
 <br>
@@ -11,17 +11,17 @@
     <button type="button" class="list-group-item list-group-item-action">Durchsuchen</button>
     <% } else { %>
     <li class="list-group-item list-group">Eingeloggt als: <span class="badge badge-primary float-right">
-            <%=username %></span></li>
-    <button class="btn btn-success" type="button" id="logoutBtn" href="/dishes"">Gericht hinzufügen</button>
+            <%=session.username %></span></li>
+    <button class="btn btn-success" type="button" id="logoutBtn" href="/browse"">Gericht hinzufügen</button>
 </div>
 <br>
 <div class="
         list-group">
         <li class="list-group-item list-group-item-dark">menü</li>
-        <button type="button" class="list-group-item list-group-item-action">Home</button>
-        <button type="button" class="list-group-item list-group-item-action">Durchsuchen</button>
-        <button type="button" class="list-group-item list-group-item-action">Profil</button>
-        <button type="button" class="list-group-item list-group-item-action">Einstellungen</button>
+        <a href="/" class="list-group-item list-group-item-action">Home</a>
+        <a href="/browse" class="list-group-item list-group-item-action">Durchsuchen</a>
+        <a href="/profile" class="list-group-item list-group-item-action">Profil</a>
+        <a href="/settings" class="list-group-item list-group-item-action">Einstellungen</a>
         <button class="btn btn-danger" type="button" id="logoutBtn" onclick="logout()">Logout</button>
         <% } %>
 </div>
