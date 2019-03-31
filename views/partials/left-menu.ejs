@@ -8,11 +8,15 @@
 </div>
 <br>
 <div class="list-group">
+    <a href="/" class="list-group-item list-group-item-action">Home</a>
     <a href="/browse" class="list-group-item list-group-item-action">Durchsuchen</a>
     <% } else { %>
     <li class="list-group-item list-group">Eingeloggt als: <span class="badge badge-primary float-right">
             <%=session.username %></span></li>
     <a href="/dish" class="btn btn-success">Gericht hinzufügen</a>
+    <a href="/profile" class="list-group-item list-group-item-action">Profil</a>
+    <a href="/settings" class="list-group-item list-group-item-action">Einstellungen</a>
+    <button class="btn btn-danger" type="button" id="logoutBtn" onclick="logout()">Logout</button>
 </div>
 <br>
 <div class="
@@ -20,9 +24,6 @@
         <li class="list-group-item list-group-item-dark">menü</li>
         <a href="/" class="list-group-item list-group-item-action">Home</a>
         <a href="/browse" class="list-group-item list-group-item-action">Durchsuchen</a>
-        <a href="/profile" class="list-group-item list-group-item-action">Profil</a>
-        <a href="/settings" class="list-group-item list-group-item-action">Einstellungen</a>
-        <button class="btn btn-danger" type="button" id="logoutBtn" onclick="logout()">Logout</button>
         <% } %>
 </div>
 <br>

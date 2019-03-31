@@ -15,9 +15,89 @@
 
         <!-- main content -->
         <div class="col-9">
-            <h1>Settings</h1>
+            <div class="card">
+                <div class="col">
+                    <br>
+                    <h1>Einstellungen</h1>
+
+                    <br>
+                    <h2>Zeiteinheit hinzufügen</h2>
+                    <h3>aktuelle Einheiten</h3>
+
+                    <!-- insert units -->
+                    <br>
+                    <div class="row">
+                        <div class="col-5">
+                            <form>
+                                <div class="form-group">
+                                    <label for="timeelementInputName">Einheit hinzufügen</label>
+                                    <input type="text" class="form-control" id="timeelementInputName"
+                                        aria-describedby="timeelementNameHelp" placeholder="Enter name">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-7">
+                            <label for="timeelementBtn">_</label><br>
+                            <button class="btn btn-primary" type="button" id="timeelementBtn"
+                                onclick="createTimeElement()">OK</button>
+                        </div>
+                    </div>
+
+                    <br>
+                    <h2>Schwierigkeit hinzufügen</h2>
+                    <h3>aktuelle Einheiten</h3>
+
+                    <!-- insert units -->
+                    <br>
+                    <div class="row">
+                        <div class="col-5">
+                            <form>
+                                <div class="form-group">
+                                    <label for="difficultyelementInputName">Einheit hinzufügen</label>
+                                    <input type="text" class="form-control" id="difficultyelementInputName"
+                                        aria-describedby="difficultyelementNameHelp" placeholder="Enter name">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-7">
+                            <label for="difficultyelementBtn">_</label><br>
+                            <button class="btn btn-primary" type="button" id="difficultyelementBtn"
+                                onclick="createDifficultyElement()">OK</button>
+                        </div>
+                    </div>
+
+                    <br>
+                    <h2>Mengenangabe hinzufügen</h2>
+                    <h3>aktuelle Einheiten</h3>
+
+                    <!-- insert units -->
+                    <br>
+                    <div class="row">
+                        <div class="col-5">
+                            <form>
+                                <div class="form-group">
+                                    <label for="amountelementInputName">Einheit hinzufügen</label>
+                                    <input type="text" class="form-control" id="amountelementInputName"
+                                        aria-describedby="amountelementNameHelp" placeholder="Enter name">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-7">
+                            <label for="amountelementBtn">_</label><br>
+                            <button class="btn btn-primary" type="button" id="amountelementBtn"
+                                onclick="createAmountElement()">OK</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
         </div>
+
     </div>
+</div>
 
 </div>
 <!-- spacing between content and footer -->
