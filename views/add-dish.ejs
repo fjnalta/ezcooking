@@ -1,6 +1,9 @@
 <!-- include static header -->
 <% include partials/header.ejs %>
 
+<!-- Include additional scripts -->
+<script src="../public/js/addDishLogic.js"></script>
+
 <!-- dynamic main content -->
 <div class="container">
     <!-- move the content one row down -->
@@ -15,75 +18,54 @@
 
         <!-- main content -->
         <div class="col-9">
-            <h1>Gericht hinzufügen</h1>
-            <h2>Allgemein</h2>
-            <div class="row">
-                <div class="col-7">
-                    <form>
-                        <div class="form-group">
+            <div class="card">
+                <div class="col">
+                    <br>
+                    <h1>Gericht hinzufügen</h1>
+                    <h2>Allgemein</h2>
+                    <div class="row">
+                        <div class="col-9">
                             <label for="dishInputName">Name</label>
                             <input type="text" class="form-control" id="dishInputName" aria-describedby="dishNameHelp"
-                                placeholder="Enter name">
-                        </div>
-                    </form>
-                    <form>
-                        <div class="form-group">
+                                   placeholder="Enter name">
                             <label for="dishInputShortDescription">Kurzbeschreibung</label>
-                            <input type="text" class="form-control" id="dishInputShortDescription" aria-describedby="dishShortDescriptionHelp"
-                                placeholder="Enter short description">
+                            <input type="text" class="form-control" id="dishInputShortDescription"
+                                   aria-describedby="dishShortDescriptionHelp"
+                                   placeholder="Enter short description">
                         </div>
-                    </form>
-                </div>
-                <div class="col-5">
-                    <div class="row">
-                        <div class="col-8">
-                            <form>
-                                <div class="form-group">
+                        <div class="col-3">
+                            <div class="row">
+                                <div class="col-12">
                                     <label for="dishInputDuration">Zubereitungsdauer</label>
-                                    <input type="text" class="form-control" id="dishInputDuration" aria-describedby="dishInputDurationHelp"
-                                        placeholder="Enter duration">
-                                </div>
-                            </form>
-                        </div>
-                        <div class="col-4">
-                            <form>
-                                <div class="form-group float-right">
-                                    <label for="dishInputDuration">Einheit</label>
-                                    <div class="dropdown">
-                                        <button class="btn btn-info dropdown-toggle float-right" type="button" id="dropdownMetric"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            min
-                                        </button>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMetric">
-                                            <button class="dropdown-item" type="button">min</button>
-                                            <button class="dropdown-item" type="button">std</button>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" id="dishInputDuration"
+                                               placeholder="Dauer" aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text" id="basic-addon2">min</span>
                                         </div>
                                     </div>
                                 </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <form>
-                                <div class="form-group float-right">
-                                    <label for="dishUploadImage"><small>optional </small>Upload Image</label>
-                                    <br>
-                                    <button type="button" class="btn btn-info float-right" id="dishUploadImage">Browse</button>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="float-right">
+                                        <label for="dishUploadImage"><small>optional </small>Upload Image</label>
+                                        <br>
+                                        <button type="button" class="btn btn-info float-right" id="dishUploadImage">
+                                            Browse
+                                        </button>
+                                    </div>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-3">
-                    <form>
-                        <div class="form-group">
+
+                    <div class="row">
+                        <div class="col-6">
                             <label for="dishInputDuration">Kategorie</label>
                             <div class="dropdown">
                                 <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMetric"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     min
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMetric">
@@ -92,15 +74,11 @@
                                 </div>
                             </div>
                         </div>
-                    </form>
-                </div>
-                <div class="col-3 text-center">
-                    <form>
-                        <div class="form-group">
+                        <div class="col-6">
                             <label for="dishInputDuration">Sub-Kategorie</label>
                             <div class="dropdown">
                                 <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMetric"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     min
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMetric">
@@ -110,103 +88,50 @@
                                 </div>
                             </div>
                         </div>
-                    </form>
-                </div>
-                <div class="col-6 text-right">
-                    <form>
-                        <div class="form-group float-right">
-                            <label for="dishInputDuration">Schwierigkeit</label>
-                            <div class="dropdown">
-                                <button class="btn btn-info dropdown-toggle float-right" type="button" id="dropdownMetric"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    leicht
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMetric">
-                                    <button class="dropdown-item" type="button">leicht</button>
-                                    <button class="dropdown-item" type="button">mittel</button>
-                                    <button class="dropdown-item" type="button">schwer</button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <h2>Zutaten</h2>
-            <div class="row">
-                <!-- add ingredients -->
-                <div class="col-4">
-                    <form>
-                        <div class="form-group">
-                            <label for="dishInputIngredientName">Name</label>
-                            <input type="text" class="form-control" id="dishInputIngredientName" aria-describedby="dishIngredient_1Help"
-                                placeholder="">
-                        </div>
-                    </form>
-                </div>
-                <div class="col-4">
-                    <form>
-                        <div class="form-group">
-                            <label for="dishInputIngredientCount">Menge</label>
-                            <input type="text" class="form-control" id="dishInputIngredientCount" aria-describedby="dishIngredient_1Help"
-                                placeholder="">
-                        </div>
-                    </form>
-                </div>
-                <div class="col-2">
+                    </div>
+
+                    <!-- TODO add Tags via Bootstrap4 Badges inside Element - e.g. Button -->
+                    <h2>Tags</h2>
                     <div class="row">
                         <div class="col-12">
-                            <label for="dishInputIngredientMetric">Einheit</label>
-                            <div class="dropdown" id="dishInputIngredientMetric">
-                                <button class="btn btn-info dropdown-toggle float-right" type="button" id="dropdownMetric"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    g
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMetric">
-                                    <button class="dropdown-item" type="button">g</button>
-                                    <button class="dropdown-item" type="button">kg</button>
-                                    <button class="dropdown-item" type="button">el</button>
-                                    <button class="dropdown-item" type="button">tl</button>
-                                    <button class="dropdown-item" type="button">ml</button>
-                                    <button class="dropdown-item" type="button">l</button>
-                                </div>
+                            <input type="text" class="form-control" id="dishTags">
+                        </div>
+                    </div>
+
+                    <h2>Zutaten</h2>
+                    <div class="row">
+                        <div class="col-12">
+                            <!-- Define jsGrid reference -->
+                            <div id="jsGrid"></div>
+                            <!-- Create Ingredients Table from jsGrid -->
+                            <script>createIngredientsTable()</script>
+                        </div>
+                        <br>
+
+                    </div>
+
+                    <h2>Zubereitung</h2>
+                    <label for="dishInputDescription">Beschreibung</label>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="input-group">
+                                <textarea class="form-control" aria-label="With textarea" rows="8"
+                                          id="dishInputDescription"></textarea>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-2">
+
+                    <br>
                     <div class="row">
-                        <label for="dishRemoveIngredient">Bearbeiten</label>
                         <div class="col-12">
-                            <button type="button" class="btn btn-danger float-right" id="dishRemoveIngredient">-</button>
+                            <button type="button" class="btn btn-primary float-right" id="dishUploadImage" style="margin-bottom: 10px"
+                                    onclick="sendRecipe()">Speichern
+                            </button>
                         </div>
                     </div>
                 </div>
+                <br>
             </div>
-            
-            <div class="row">
-                <div class="col-12">
-                    <button type="button" class="btn btn-success float-right" id="dishAddIngredient">+</button>
-                </div>
-            </div>
-
-            <h2>Zubereitung</h2>
-            <label for="dishInputDescription">Beschreibung</label>
-            <div class="row">
-                <div class="col-12">
-                    <div class="input-group">
-                        <textarea class="form-control" aria-label="With textarea" rows="8" id="dishInputDescription"></textarea>
-                    </div>
-                </div>
-            </div>
-
-            <br>
-            <div class="row">
-                <div class="col-12">
-                    <button type="button" class="btn btn-primary float-right" id="dishUploadImage">Speichern</button>
-                </div>
-
-            </div>
-
         </div>
     </div>
 

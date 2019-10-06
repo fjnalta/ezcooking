@@ -14,14 +14,15 @@
     <li class="list-group-item list-group">Eingeloggt als: <span class="badge badge-primary float-right">
             <%=session.username %></span></li>
     <a href="/dish" class="btn btn-success">Gericht hinzufügen</a>
-    <a href="/profile" class="list-group-item list-group-item-action">Profil</a>
+    <a href="/profile" class="list-group-item list-group-item-action">Mein Profil</a>
+    <a href="/favorites" class="list-group-item list-group-item-action">Favoriten</a>
     <a href="/settings" class="list-group-item list-group-item-action">Einstellungen</a>
     <button class="btn btn-danger" type="button" id="logoutBtn" onclick="logout()">Logout</button>
 </div>
 <br>
 <div class="
         list-group">
-        <li class="list-group-item list-group-item-dark">menü</li>
+        <li class="list-group-item list-group-item-dark">Menü</li>
         <a href="/" class="list-group-item list-group-item-action">Home</a>
         <a href="/browse" class="list-group-item list-group-item-action">Durchsuchen</a>
         <% } %>
@@ -31,30 +32,15 @@
 <% if(session) { %>
 <!-- mockup my dishes -->
 <div class="list-group">
-    <li class="list-group-item list-group-item-dark">meine Favoriten</li>
+    <li class="list-group-item list-group-item-dark">Meine Favoriten</li>
     <button type="button" class="list-group-item list-group-item-action">Gericht 1</button>
     <button type="button" class="list-group-item list-group-item-action">Gericht 2</button>
     <button type="button" class="list-group-item list-group-item-action">Gericht 3</button>
+    <button type="button" class="list-group-item list-group-item-action">Gericht 4</button>
+    <button type="button" class="list-group-item list-group-item-action">Gericht 5</button>
 </div>
 <br>
 <% } %>
-
-<!-- mockup neu -->
-<div class="list-group">
-    <li class="list-group-item list-group-item-dark">neu</li>
-    <button type="button" class="list-group-item list-group-item-action">Gericht 1</button>
-    <button type="button" class="list-group-item list-group-item-action">Gericht 2</button>
-    <button type="button" class="list-group-item list-group-item-action">Gericht 3</button>
-</div>
-<br>
-<!-- mockup angesagt -->
-<div class="list-group">
-    <li class="list-group-item list-group-item-dark">angesagt</li>
-    <button type="button" class="list-group-item list-group-item-action">Gericht 1</button>
-    <button type="button" class="list-group-item list-group-item-action">Gericht 2</button>
-    <button type="button" class="list-group-item list-group-item-action">Gericht 3</button>
-</div>
-<br>
 
 <div class="list-group">
     <img src="../public/img/default.jpg" alt="..." class="img-thumbnail">

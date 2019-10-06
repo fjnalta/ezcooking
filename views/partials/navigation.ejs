@@ -1,36 +1,41 @@
 <!-- top navigation -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="/"><img src="/public/img/favicon.ico" width="30" height="30" class="d-inline-block align-top"
-            alt=""></a>
+                                          alt=""></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-            <a class="nav-link" href="/"><strong>ezCooking</strong></a>
+
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/"><strong>Home</strong></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/browse"><strong>Durchsuchen</strong></a>
         </li>
     </ul>
     <ul class="navbar-nav navbar-right">
-        <li class="nav-item dropdown">
-            <!-- TODO - switch label in js if item is selected -->
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                suche Gericht nach
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                <button class="dropdown-item" type="button">Benutzer</button>
-                <button class="dropdown-item" type="button">Genre</button>
-                <button class="dropdown-item" type="button">Snacks</button>
-                <button class="dropdown-item" type="button">Tageszeit</button>
-            </div>
-        </li>
         <!-- use css to create spacing between buttons -->
         <div id="spacing-nav"></div>
         <li class="nav-item dropdown">
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <!-- TODO - configure typeahead -->
+            <form id="form-country_v1" name="form-country_v1">
+                <div class="typeahead__container">
+                    <div class="typeahead__field">
+                        <div class="typeahead__query">
+                            <input class="js-typeahead-country_v1" name="country_v1[query]" type="search" placeholder="Search" autocomplete="off">
+                        </div>
+
+                        <div class="typeahead__button">
+                            <button type="submit">
+                                <i class="typeahead__search-icon"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </form>
         </li>
         <!-- use css to create spacing between buttons -->
@@ -47,3 +52,7 @@
         <% } %>
     </ul>
 </nav>
+
+
+<!-- Initialize Typeahead Search -->
+<script src="../public/js/typeaheadSearch.js"></script>

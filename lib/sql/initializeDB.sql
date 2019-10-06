@@ -1,6 +1,6 @@
-CREATE DATABASE ezCooking;
-GRANT ALL ON ezCooking.* to 'ezCooking'@'localhost' identified by 'asdfg';
-USE ezCooking;
+CREATE DATABASE ezcooking;
+GRANT ALL ON ezcooking.* to 'ezcooking'@'localhost' identified by 'ezcookingpw';
+USE ezcooking;
 
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
