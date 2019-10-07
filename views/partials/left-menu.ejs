@@ -11,18 +11,19 @@
     <a href="/" class="list-group-item list-group-item-action">Home</a>
     <a href="/browse" class="list-group-item list-group-item-action">Durchsuchen</a>
     <% } else { %>
+    <li class="list-group-item list-group-item-dark">Benutzermenü</li>
     <li class="list-group-item list-group">Eingeloggt als: <span class="badge badge-primary float-right">
             <%=session.username %></span></li>
-    <a href="/dish" class="btn btn-success">Gericht hinzufügen</a>
-    <a href="/profile" class="list-group-item list-group-item-action">Mein Profil</a>
+    <a href="/dish" class="list-group-item list-group-item-action" style="background-color: #218838; border-color: #1e7e34; color: whitesmoke">Gericht hinzufügen</a>
+    <a href="/profile" class="list-group-item list-group-item-action">Profil</a>
     <a href="/favorites" class="list-group-item list-group-item-action">Favoriten</a>
     <a href="/settings" class="list-group-item list-group-item-action">Einstellungen</a>
-    <button class="btn btn-danger" type="button" id="logoutBtn" onclick="logout()">Logout</button>
+    <a href="#" class="list-group-item list-group-item-action" style="background-color: #c82333; border-color: #bd2130; color: whitesmoke" onclick="logout()">Logout</a>
 </div>
 <br>
 <div class="
         list-group">
-        <li class="list-group-item list-group-item-dark">Menü</li>
+        <li class="list-group-item list-group-item-dark">Hauptmenü</li>
         <a href="/" class="list-group-item list-group-item-action">Home</a>
         <a href="/browse" class="list-group-item list-group-item-action">Durchsuchen</a>
         <% } %>
@@ -32,7 +33,7 @@
 <% if(session) { %>
 <!-- mockup my dishes -->
 <div class="list-group">
-    <li class="list-group-item list-group-item-dark">Meine Favoriten</li>
+    <li class="list-group-item list-group-item-dark">Favoriten</li>
     <button type="button" class="list-group-item list-group-item-action">Gericht 1</button>
     <button type="button" class="list-group-item list-group-item-action">Gericht 2</button>
     <button type="button" class="list-group-item list-group-item-action">Gericht 3</button>
@@ -43,10 +44,6 @@
 <% } %>
 
 <div class="list-group">
-    <img src="../public/img/default.jpg" alt="..." class="img-thumbnail">
-</div>
-<br>
-<div class="list-group">
-    <img src="../public/img/default.jpg" alt="..." class="img-thumbnail">
+    <img src="../public/img/default.jpg" class="img-thumbnail">
 </div>
 <br>
