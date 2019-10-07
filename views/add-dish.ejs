@@ -62,30 +62,23 @@
 
                     <div class="row">
                         <div class="col-6">
-                            <label for="dishInputDuration">Kategorie</label>
                             <div class="dropdown">
-                                <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMetric"
+                                <button class="btn btn-info dropdown-toggle" type="button" id="dropdownCategory"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    min
+                                    Kategorie
                                 </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMetric">
-                                    <button class="dropdown-item" type="button">min</button>
-                                    <button class="dropdown-item" type="button">std</button>
+                                <div class="dropdown-menu" id="dropdown-menu-category">
+                                    <script>loadMainCategories();</script>
                                 </div>
                             </div>
                         </div>
                         <div class="col-6">
-                            <label for="dishInputDuration">Sub-Kategorie</label>
                             <div class="dropdown">
-                                <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMetric"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    min
+                                <button class="btn btn-info dropdown-toggle" type="button" id="dropdownSubCategory"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled>
+                                    Sub-Kategorie
                                 </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMetric">
-                                    <button class="dropdown-item" type="button">leicht</button>
-                                    <button class="dropdown-item" type="button">mittel</button>
-                                    <button class="dropdown-item" type="button">schwer</button>
-                                </div>
+                                <div class="dropdown-menu" id="dropdown-menu-subcategory"></div>
                             </div>
                         </div>
                     </div>
