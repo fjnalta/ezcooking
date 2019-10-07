@@ -1,7 +1,7 @@
 function login() {
     $.ajax({
         type: 'POST',
-        url: 'http://localhost:3000/login',
+        url: '/login',
         data: { 
             'email': $('#loginInputEmail').val(),
             'password': $('#loginInputPassword').val()
@@ -27,7 +27,7 @@ function register() {
 function logout() {
     $.ajax({
         type: 'POST',
-        url: 'http://localhost:3000/logout',
+        url: '/logout',
         success: function(msg){
             location.reload();
         }

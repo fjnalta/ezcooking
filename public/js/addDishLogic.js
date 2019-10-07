@@ -4,7 +4,7 @@
 function loadMainCategories() {
     $.ajax({
         type: 'GET',
-        url: 'http://localhost:3000/categories',
+        url: '/categories',
         success: function (msg) {
             populateCategories(msg);
             console.log(msg);
@@ -40,7 +40,7 @@ function loadSubCategories(id) {
     // Call for SubCategories
     $.ajax({
         type: 'GET',
-        url: 'http://localhost:3000/categories/' + id,
+        url: '/categories/' + id,
         success: function (msg) {
             populateSubCategories(msg);
         },
@@ -72,7 +72,7 @@ function populateSubCategories(data) {
 function createIngredientsTable() {
     $.ajax({
         type: 'GET',
-        url: 'http://localhost:3000/ingredients/amount',
+        url: '/ingredients/amount',
         success: function (msg) {
             let units = msg;
             createGrid(units);

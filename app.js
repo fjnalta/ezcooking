@@ -9,8 +9,6 @@ const config = require('./config');
 // Setup Express
 const app = express();
 
-// ich bin de shampoo
-
 // Use EJS as View Engine
 app.set('view engine','ejs');
 app.set('views',path.join(__dirname, 'views'));
