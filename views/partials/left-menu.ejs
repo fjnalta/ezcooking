@@ -14,16 +14,16 @@
     <a href="/" class="list-group-item list-group-item-action">Home</a>
     <a href="/browse" class="list-group-item list-group-item-action">Durchsuchen</a>
     <% } else { %>
-    <li class="list-group-item list-group-item-dark">Benutzermenü</li>
-    <li class="list-group-item list-group">Eingeloggt als: <span class="badge badge-primary float-right">
+        <li class="list-group-item list-group-item-dark">Benutzermenü</li>
+        <li class="list-group-item list-group">Eingeloggt als: <span class="badge badge-primary float-right">
             <%= session.username %></span></li>
-    <a href="/dish" class="list-group-item list-group-item-action"
-       style="background-color: #218838; border-color: #1e7e34; color: whitesmoke">Gericht hinzufügen</a>
-    <a href="/profile" class="list-group-item list-group-item-action">Profil</a>
-    <a href="/favorites" class="list-group-item list-group-item-action">Favoriten</a>
-    <a href="/settings" class="list-group-item list-group-item-action">Einstellungen</a>
-    <a href="#" class="list-group-item list-group-item-action"
-       style="background-color: #c82333; border-color: #bd2130; color: whitesmoke" onclick="logout()">Logout</a>
+        <a href="/dish" class="list-group-item list-group-item-action"
+           style="background-color: #218838; border-color: #1e7e34; color: whitesmoke">Gericht hinzufügen</a>
+        <a href="/favorites" class="list-group-item list-group-item-action">Favoriten</a>
+        <a href="/mydishes" class="list-group-item list-group-item-action">Meine Rezepte</a>
+        <a href="/settings" class="list-group-item list-group-item-action">Einstellungen</a>
+        <a href="#" class="list-group-item list-group-item-action"
+           style="background-color: #c82333; border-color: #bd2130; color: whitesmoke" onclick="logout()">Logout</a>
 </div>
 <br>
 <div class="
