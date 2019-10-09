@@ -1,19 +1,16 @@
-// Imports
 const express = require('express');
 const session = require('express-session');
 const bodyParser = require('body-parser');
 const path = require('path');
 const routes = require('./lib/router.js');
 const config = require('./config');
-
-// Setup Express
 const app = express();
 
 // Use EJS as View Engine
 app.set('view engine','ejs');
 app.set('views',path.join(__dirname, 'views'));
 
-// Bodyparser for JSON and FileUpload
+// Bodyparser for JSON and File Upload
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
