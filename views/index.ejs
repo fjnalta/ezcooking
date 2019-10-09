@@ -12,150 +12,41 @@
             <!-- include left menu -->
             <% include partials/left-menu.ejs %>
         </div>
-
         <!-- main content -->
         <div class="col-9">
-
-            <!-- new dishes -->
+            <!-- Heading -->
             <div class="card">
                 <div class="card-header">
                     neue Gerichte
                 </div>
-
-                <!-- first row items -->
-                <div class="row">
-                    <div class="col-4">
-                        <div class="card" style="max-width: 18rem;">
-                            <img src="/public/img/favicon.ico" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up
-                                    the
-                                    bulk of the
-                                    card's
-                                    content.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="card" style="max-width: 18rem;">
-                            <img src="/public/img/favicon.ico" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up
-                                    the
-                                    bulk of the
-                                    card's
-                                    content.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="card" style="max-width: 18rem;">
-                            <img src="/public/img/favicon.ico" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up
-                                    the
-                                    bulk of the
-                                    card's
-                                    content.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
-
             <br>
-            <!-- dishes for specific time of the day -->
-            <div class="card">
-                <div class="card-header">
-                    nach Tageszeit
-                </div>
-
-                <!-- first row items -->
-                <div class="row">
+            <!-- first row items -->
+            <div class="row">
+            <% for(let i=0;i<6;i++) { %>
+                <!-- break after 3 items -->
+                    <%  if(i==3) { %>
+                        </div>
+                        <!-- end first row items -->
+                        <br>
+                        <!-- second row items -->
+                        <div class="row">
+                    <%  } %>
+                    <!-- populate items -->
                     <div class="col-4">
                         <div class="card" style="max-width: 18rem;">
-                            <img src="/public/img/favicon.ico" class="card-img-top" alt="...">
+                            <a href="/dish/<%= data[i].id %>"><img src="/public/uploads/<%= data[i].image_name %>" class="card-img-top"></a>
                             <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk of the
-                                    card's
-                                    content.</p>
+                                <p class="card-text"><%= data[i].name %></p>
+                                    <p><small><%= data[i].short_description %></small></p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-4">
-                        <div class="card" style="max-width: 18rem;">
-                            <img src="/public/img/favicon.ico" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk of the
-                                    card's
-                                    content.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="card" style="max-width: 18rem;">
-                            <img src="/public/img/favicon.ico" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk of the
-                                    card's
-                                    content.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <%  } %>
             </div>
-
-            <br>
-
-            <!-- dishes by genre -->
-            <div class="card">
-                <div class="card-header">
-                    nach Genre
-                </div>
-
-                <!-- second row items -->
-                <div class="row">
-                    <div class="col-4">
-                        <div class="card" style="max-width: 18rem;">
-                            <img src="/public/img/favicon.ico" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk of the
-                                    card's
-                                    content.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="card" style="max-width: 18rem;">
-                            <img src="/public/img/favicon.ico" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk of the
-                                    card's
-                                    content.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="card" style="max-width: 18rem;">
-                            <img src="/public/img/favicon.ico" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk of the
-                                    card's
-                                    content.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <!-- end second row items -->
         </div>
     </div>
-
 </div>
 <!-- spacing between content and footer -->
 <br>
