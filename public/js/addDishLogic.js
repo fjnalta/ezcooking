@@ -91,14 +91,11 @@ function createGrid(units) {
     $("#jsGrid").jsGrid({
         width: "100%",
         height: "300px",
-
         inserting: true,
         editing: true,
         sorting: true,
         paging: true,
-
         data : [],
-
         fields: [
             { name: "Name", type: "text", width: 200, validate: "required" },
             { name: "Menge", type: "text", width: 60, validate: "required" },
