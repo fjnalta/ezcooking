@@ -75,8 +75,7 @@ function createIngredientsTable() {
         type: 'GET',
         url: '/ingredients/amount',
         success: function (msg) {
-            let units = msg;
-            createGrid(units);
+            createGrid(msg);
         },
         dataType: "json"
     });
