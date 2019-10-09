@@ -7,7 +7,6 @@ function loadMainCategories() {
         url: '/categories',
         success: function (msg) {
             populateCategories(msg);
-            console.log(msg);
         },
         dataType: "json"
     });
@@ -21,6 +20,8 @@ function loadMainCategories() {
 function populateCategories(data) {
     for(let i=0;i<data.length;i++) {
         $("<button/>").addClass("dropdown-item").prop({ type: "button" }).text(data[i].name).click(function () {
+            // Disable Save Button because SubCategory is not set
+            $("#buttonSendRecipe").prop('disabled', true);
             // Remove selection from SubCategory
             $("#dropdownSubCategory").text("Sub-Kategorie");
             // Set Menu Text
@@ -31,7 +32,6 @@ function populateCategories(data) {
     }
 }
 
-//
 /**
  * Load Sub-Category if Category was selected
  * @param id is the DB id of the selected Category
@@ -54,7 +54,6 @@ function loadSubCategories(id) {
  * [{"id":27,"name":"Gemüse","category":3}]
  */
 function populateSubCategories(data) {
-    console.log(data);
     // Activate SubCategory Menu
     $("#dropdown-menu-subcategory").empty();
     $("#dropdownSubCategory").prop('disabled', false);
@@ -62,6 +61,8 @@ function populateSubCategories(data) {
         $("<button/>").addClass("dropdown-item").prop({ type: "button" }).text(data[i].name).click(function () {
             // Set Menu Text
             $("#dropdownSubCategory").text(data[i].name);
+            // Enable Save Button
+            $("#buttonSendRecipe").prop('disabled', false);
         }).appendTo("#dropdown-menu-subcategory");
     }
 }
@@ -111,6 +112,30 @@ function createGrid(units) {
  * Send the created Recipe to the Server
  */
 function sendRecipe() {
-    // TODO - gather information from frontend
-    // TODO - ajax call to backend
+    // create FormData so Node.js can handle it
+    let formData = new FormData();
+
+    // gather recipe information
+    formData.append('name',$("#dishInputName").val());
+    formData.append('shortDescription', $("#dishInputShortDescription").val());
+    formData.append('duration', $("#dishInputDuration").val());
+    formData.append('category', $("#dropdownCategory").text());
+    formData.append('subCategory', $("#dropdownSubCategory").text());
+    formData.append('ingredients', JSON.stringify($("#jsGrid").jsGrid("option", "data")));
+    formData.append('description', $("#dishInputDescription").val());
+    formData.append('data',$("#dishUploadImage")[0].files[0]);
+
+    // Ajax call to backend
+    $.ajax({
+        url: '/dish',
+        data: formData,
+        contentType: false,
+        processData: false,
+        cache: false,
+        type: 'POST',
+        success: function(data){
+        }
+    });
+
+    // TODO - load new recipe
 }

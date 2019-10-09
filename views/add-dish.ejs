@@ -45,11 +45,9 @@
                             </div>
                             <br>
                             <div class="float-right">
-                                <label for="dishUploadImage"><small>optional </small>Upload Image</label>
+                                <label for="dishUploadImage">Upload Image</label>
                                 <br>
-                                <button type="button" class="btn btn-info float-right" id="dishUploadImage">
-                                    Browse
-                                </button>
+                                <input type="file" class="form-control-file" id="dishUploadImage">
                             </div>
                         </div>
                     </div>
@@ -84,7 +82,7 @@
                             <!-- Define jsGrid reference -->
                             <div id="jsGrid"></div>
                             <!-- Create Ingredients Table from jsGrid -->
-                            <script>createIngredientsTable()</script>
+                            <script>createIngredientsTable();</script>
                         </div>
                     </div>
 
@@ -98,13 +96,11 @@
                             </div>
                         </div>
                     </div>
-
                     <br>
                     <div class="row">
                         <div class="col-12">
-                            <button type="button" class="btn btn-primary float-right" id="dishUploadImage"
-                                    style="margin-bottom: 10px"
-                                    onclick="sendRecipe()">Speichern
+                            <button type="button" class="btn btn-primary float-right" id="buttonSendRecipe"
+                                    disabled onclick="sendRecipe();">Speichern
                             </button>
                         </div>
                     </div>
