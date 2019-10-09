@@ -134,8 +134,11 @@ function sendRecipe() {
         cache: false,
         type: 'POST',
         success: function(data){
+            // Redirect frontend
+            window.location.replace(data);
         }
     });
 
-    // TODO - load new recipe
+    // Disable button to prevent double postings
+    $("#buttonSendRecipe").prop('disabled', true);
 }
