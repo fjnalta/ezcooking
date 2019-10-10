@@ -73,7 +73,7 @@ function populateSubCategories(data) {
 function createIngredientsTable() {
     $.ajax({
         type: 'GET',
-        url: '/ingredients/amount',
+        url: '/ingredients',
         success: function (msg) {
             createGrid(msg);
         },
