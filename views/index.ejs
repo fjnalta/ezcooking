@@ -25,7 +25,7 @@
             <div class="row">
             <% for(let i=0;i<6;i++) { %>
                 <!-- break after 3 items -->
-                    <%  if(i==3) { %>
+                    <%  if(i % 3 == 0) { %>
                         </div>
                         <!-- end first row items -->
                         <br>

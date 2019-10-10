@@ -19,8 +19,18 @@
             <div class="card">
                 <div class="col">
                     <br>
-                    <h1>Durchsuchen (List View)</h1>
+                    <h1>Durchsuchen</h1>
                     <br>
+                    <% for(let i=0;i<data.length;i++) { %>
+                        <ul class="list-unstyled">
+                            <li><a href="/browse/<%= data[i].id %>"><%= data[i].name %> (<%= data[i].count %>)</a></li>
+                                <% for(let j=0;j<data[i].subCategories.length;j++) { %>
+                                    <ul>
+                                        <li><a href="/browse/<%= data[i].id %>/sub/<%= data[i].subCategories[j].id%>"><%= data[i].subCategories[j].name %> (<%= data[i].subCategories[j].count %>)</a></li>
+                                    </ul>
+                                <% } %>
+                        </ul>
+                    <% } %>
                 </div>
             </div>
         </div>
