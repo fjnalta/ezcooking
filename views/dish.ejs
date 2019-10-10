@@ -1,9 +1,58 @@
 <!-- include static header -->
 <% include partials/header.ejs %>
 
-<!-- Include additional scripts -->
-<script src="../public/js/dishLogic.js"></script>
+<!-- dynamic main content -->
+<div class="container">
+    <!-- move the content one row down -->
+    <br>
+    <!-- everything in this div in one row -->
+    <div class="row">
+        <!-- left menu -->
+        <div class="col-3">
+            <!-- include left menu -->
+            <% include partials/left-menu.ejs %>
+        </div>
 
+        <!-- main content -->
+        <div class="col-9">
+            <div class="card">
+                <div class="col">
+                    <br>
+                    <div class="row">
+                        <div class="col-10">
+                            <h1><%= data.name %></h1>
+                        </div>
+                        <div class="col-2">
+                            <p style="text-align: right">Dauer: <%= data.duration %>min</p>
+                        </div>
+                    </div>
+                    <img src="/public/uploads/<%= data.image_name %>" class="card-img-top">
+
+                    <p><h2>Kurzbeschreibung</h2></p>
+                    <p><%= data.short_description %></p>
+
+                    <p><h2>Zutaten</h2></p>
+
+                    <% for(let i=0;i<data.ingredients.length;i++) { %>
+                    <div class="row">
+                        <div class="col-6">
+                            <p data-toggle="tooltip" title="<%= data.ingredients[i].count %> <%= data.ingredients[i].unit_name %>">
+                                <%= data.ingredients[i].count %>
+                                <%= data.ingredients[i].short_name %></p>
+                        </div>
+                        <div class="col-6">
+                            <p><%= data.ingredients[i].name %></p>
+                        </div>
+                    </div>
+                    <% } %>
+                    <p><h2>Zubereitung</h2></p>
+                    <p><%= data.preparation %></p>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- spacing between content and footer -->
 <br>
 <!-- include static footer -->
