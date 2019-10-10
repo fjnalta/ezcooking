@@ -21,16 +21,50 @@
                     <h1>Einstellungen</h1>
 
                     <h2>Persönliche Daten</h2>
-                    <p>Name:</p>
-                    <p>Name ändern</p>
-                    <p>Email:</p>
-                    <p>Email ändern</p>
+                    <div class="row">
+                        <div class="col-10">
+                            <p>Name: <span class="badge badge-primary"><%= session.username %></span></p>
+                        </div>
+                        <div class="col-2">
+                            <p style="text-align: right"><a href="#"><i class="fas fa-edit"></i></a></p>
+                        </div>
+                    </div>
 
-                    <h3>Passwort</h3>
-                    <p>PW ändern</p>
+                    <div class="row">
+                        <div class="col-10">
+                            <p>Email: <span class="badge badge-primary"><%= session.email %></span></p>
+                        </div>
+                        <div class="col-2">
+                            <p style="text-align: right"><a href="#"><i class="fas fa-edit"></i></a></p>
+                        </div>
+                    </div>
 
+                    <div class="row">
+                        <div class="col">
+                            <p>Permissions:
+                                <% if(session.privileges == "U") { %>
+                                        <span class="badge badge-primary">User</span>
+                                    <% } else { %>
+                                        <span class="badge badge-danger">Admin</span>
+                                    <% } %>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-10">
+                            <p>Passwort: ***********</p>
+                        </div>
+                        <div class="col-2">
+                            <p style="text-align: right"><a href="#"><i class="fas fa-edit"></i></a></p>
+                        </div>
+                    </div>
+
+                    <div class="dropdown-divider"></div>
+                    <br>
                     <h2>Account Löschen</h2>
-                    <p>Acc Löschen Button oder so</p>
+                    <p><button type="button" class="btn btn-danger" id="btnDeleteAccount">Meinen Account löschen</button></p>
+                    <br>
                 </div>
             </div>
         </div>
