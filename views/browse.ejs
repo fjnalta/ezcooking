@@ -21,14 +21,16 @@
                     <br>
                     <h1>Durchsuchen</h1>
                     <br>
-                    <% for(let i=0;i<data.length;i++) { %>
+                    <% for(let i=0;i<data.categories.length;i++) { %>
                         <ul class="list-unstyled">
-                            <li><a href="/browse/<%= data[i].id %>"><%= data[i].name %> (<%= data[i].count %>)</a></li>
-                                <% for(let j=0;j<data[i].subCategories.length;j++) { %>
+                            <li><a href="/browse/<%= data.categories[i].id %>"><%= data.categories[i].category %></a> (<%= data.categories[i].count %>)</li>
+                            <% for(let j=0;j<data.subCategories.length;j++) { %>
+                                <% if(data.categories[i].id == data.subCategories[j].categoryId) { %>
                                     <ul>
-                                        <li><a href="/browse/<%= data[i].id %>/sub/<%= data[i].subCategories[j].id%>"><%= data[i].subCategories[j].name %> (<%= data[i].subCategories[j].count %>)</a></li>
+                                        <li><a href="/browse/<%= data.categories[i].id %>/sub/<%= data.subCategories[j].id%>"><%= data.subCategories[j].subname %></a> (<%= data.subCategories[j].count %>)</li>
                                     </ul>
                                 <% } %>
+                            <% } %>
                         </ul>
                     <% } %>
                 </div>
