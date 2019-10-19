@@ -121,7 +121,7 @@ function addIngredientRow() {
         "</div>" +
         "</td>" +
         "<td>" +
-        "<p style=\"text-align: right\" id=\"ingredientsRow_<%= data.ingredients[i].id %>_action\">" +
+        "<p style='text-align: right' id='ingredientsRow_" + newIngredients + "_action'>" +
         "<a id='ingredientsRow_" + newIngredients + "_deleteAction' onclick=deleteIngredient(" + newIngredients + ");><i class='far fa-trash-alt'></i></a>" +
         "</p>" +
         "</td>" +
@@ -132,5 +132,9 @@ function addIngredientRow() {
     newIngredients--;
 }
 
-// TODO - gather information and save dish
-// TODO - some logic to now save empty ingredients / units
+function updateRecipe() {
+    // TODO - gather information and save dish
+    // TODO - some logic to now save empty ingredients / units
+    console.log("TODO");
+}
+

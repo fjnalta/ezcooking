@@ -47,7 +47,7 @@
                             <br>
                             <!-- show image -->
                             <div class="float-right">
-                                <img src="/public/uploads/<%= data.image_name %>" class="img-thumbnail">
+                                <img src="/public/uploads/<%= data.image_name %>" class="img-thumbnail" alt="<%= data.image_name %>">
                                 <label for="dishUploadImage">Bild bearbeiten</label>
                                 <br>
                                 <input type="file" class="form-control-file" id="dishUploadImage">
@@ -121,7 +121,7 @@
                                             </td>
                                             <td>
                                                 <p style="text-align: right" id="ingredientsRow_<%= data.ingredients[i].id %>_action">
-                                                    <a id="ingredientsRow_<%= data.ingredients[i].id %>_deleteAction" onclick="deleteDish(<%= data.ingredients[i].id %>);"><i class="far fa-trash-alt"></i></a>
+                                                    <a id="ingredientsRow_<%= data.ingredients[i].id %>_deleteAction" onclick="deleteIngredient(<%= data.ingredients[i].id %>);"><i class="far fa-trash-alt"></i></a>
                                                 </p>
                                             </td>
                                         </tr>
