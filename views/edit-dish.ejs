@@ -1,0 +1,174 @@
+<!-- include static header -->
+<% include partials/header.ejs %>
+
+<!-- Include additional scripts -->
+<script src="/../public/js/editDishLogic.js"></script>
+
+<!-- dynamic main content -->
+<div class="container">
+    <!-- move the content one row down -->
+    <br>
+    <!-- everything in this div in one row -->
+    <div class="row">
+        <!-- left menu -->
+        <div class="col-3">
+            <!-- include left menu -->
+            <% include partials/left-menu.ejs %>
+        </div>
+        <!-- main content -->
+        <div class="col-9">
+            <div class="card card-header">
+                Gericht bearbeiten
+            </div>
+            <br>
+            <div class="card">
+                <div class="col">
+                    <br>
+                    <h2>Allgemein</h2>
+                    <div class="row">
+                        <div class="col-9">
+                            <label for="dishInputName">Name</label>
+                            <input type="text" value="<%= data.name %>" class="form-control" id="dishInputName" aria-describedby="dishNameHelp">
+                            <br>
+                            <label for="dishInputShortDescription">Kurzbeschreibung</label>
+                            <input type="text" class="form-control" id="dishInputShortDescription"
+                                   aria-describedby="dishShortDescriptionHelp"
+                                   value="<%= data.short_description %>">
+                        </div>
+                        <div class="col-3">
+                            <label for="dishInputDuration">Zubereitungsdauer</label>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" id="dishInputDuration"
+                                       value="<%= data.duration %>" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="basic-addon2">min</span>
+                                </div>
+                            </div>
+                            <br>
+                            <!-- show image -->
+                            <div class="float-right">
+                                <img src="/public/uploads/<%= data.image_name %>" class="img-thumbnail">
+                                <label for="dishUploadImage">Bild bearbeiten</label>
+                                <br>
+                                <input type="file" class="form-control-file" id="dishUploadImage">
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="dropdown">
+                                <button class="btn btn-info dropdown-toggle" type="button" id="dropdownCategory"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <%= data.category_name %>
+                                </button>
+                                <div class="dropdown-menu" id="dropdown-menu-category">
+                                    <script>loadMainCategories();</script>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="dropdown">
+                                <button class="btn btn-info dropdown-toggle" type="button" id="dropdownSubCategory"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <%= data.subcategory %>
+                                </button>
+                                <div class="dropdown-menu" id="dropdown-menu-subcategory"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="dropdown-divider"></div>
+
+                    <h2>Zutaten</h2>
+
+                    <div class="row">
+
+                        <div class="col-12">
+                            <table class="table table-hover">
+                                <thead>
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col" style="text-align: center">Menge</th>
+                                    <th scope="col" style="text-align: center">Einheit</th>
+                                    <th scope="col" style="text-align: right">Aktion</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    <% for(let i=0;i<data.ingredients.length;i++) { %>
+                                        <tr id="ingredientsRow_<%= data.ingredients[i].id %>">
+                                            <td>
+                                                <p>
+                                                    <input type='text' class='form-control' id='nameInput_<%= data.ingredients[i].id %>' value='<%= data.ingredients[i].name %>'>
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <p>
+                                                    <input type='text' class='form-control' id='countInput_<%= data.ingredients[i].id %>' value='<%= data.ingredients[i].count %>'>
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <div class='dropdown'>
+                                                    <button class='btn btn-info dropdown-toggle' type='button' id='dropdownIngredient_<%= data.ingredients[i].id %>' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                                                        <%= data.ingredients[i].unit_name %> ( <%= data.ingredients[i].short_name %> )
+                                                        </button>
+                                                    <div class='dropdown-menu' id='dropdown-menu-ingredients_<%= data.ingredients[i].id %>'>
+                                                        </div>
+                                                    </div>
+                                            </td>
+                                            <td>
+                                                <p style="text-align: right" id="ingredientsRow_<%= data.ingredients[i].id %>_action">
+                                                    <a id="ingredientsRow_<%= data.ingredients[i].id %>_deleteAction" onclick="deleteDish(<%= data.ingredients[i].id %>);"><i class="far fa-trash-alt"></i></a>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <!-- Load additional data from DB -->
+                                        <script>loadData(<%= data.ingredients[i].id %>);</script>
+                                    <% } %>
+                                </tbody>
+                            </table>
+                            <div class="col">
+                                <p style="text-align: right"><a onclick="addIngredientRow();"><i class="far fa-plus-square"></i></a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dropdown-divider"></div>
+
+                    <h2>Zubereitung</h2>
+                    <label for="dishInputDescription">Beschreibung</label>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="input-group">
+                                <textarea class="form-control" aria-label="With textarea" rows="12"
+                                          id="dishInputDescription"><%= data.preparation %></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+                    <div class="dropdown-divider"></div>
+                    <br>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <button type="button" class="btn btn-primary float-right" id="buttonUpdateRecipe"
+                                    disabled onclick="updateRecipe();">Aktualisieren
+                            </button>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- include static footer -->
+<% include partials/footer.ejs %>
+<!-- spacing at content end -->
+<br>
