@@ -1,6 +1,9 @@
 <!-- include static header -->
 <% include partials/header.ejs %>
 
+<!-- Include additional scripts -->
+<script src="../public/js/myDishesLogic.js"></script>
+
 <!-- dynamic main content -->
 <div class="container">
     <!-- move the content one row down -->
@@ -22,7 +25,7 @@
                     <% for(let i=0;i<data.length;i++) { %>
                         <div class="row">
                             <div class="col-2">
-                                <img src="/public/uploads/<%= data[i].image_name %>" alt="<%= data[i].name %>" class="img-thumbnail">
+                                <a href="/dish/<%= data[i].id %>"><img src="/public/uploads/<%= data[i].image_name %>" alt="<%= data[i].name %>" class="img-thumbnail"></a>
                             </div>
                             <div class="col-6">
                                 <p>
@@ -32,12 +35,13 @@
                             </div>
                             <div class="col-3">
                                 <!-- Duration -->
-                                <p><i class="far fa-clock"></i> <%= data[i].duration %> min</p>
+                                <p><i class="far fa-clock"></i> <%= data[i].duration %> min.</p>
                             </div>
                             <div class="col-1">
                                 <p style="text-align: right">
                                     <a href="#"><i class="fas fa-edit"></i></a>
-                                    <a href="#"><i class="far fa-trash-alt"></i></a>
+                                    <!-- include delete modal -->
+                                    <% include modals/delete-dish-modal.ejs %>
                                 </p>
                             </div>
                         </div>
