@@ -19,13 +19,31 @@
                 <div class="col">
                     <br>
                     <h1>Meine Rezepte</h1>
-                    <p>Gericht 1</p>
-                    <p>Gericht 2</p>
-                    <p>Gericht 3</p>
-                    <p>Gericht 4</p>
-                    <p>Gericht 5</p>
-
-                    <p>Grid -> Rezept löschen/bearbeiten</p>
+                    <% for(let i=0;i<data.length;i++) { %>
+                        <div class="row">
+                            <div class="col-2">
+                                <img src="/public/uploads/<%= data[i].image_name %>" alt="<%= data[i].name %>" class="img-thumbnail">
+                            </div>
+                            <div class="col-6">
+                                <p>
+                                    Gericht: <%= data[i].name %><br>
+                                    <small><%= data[i].short_description %></small>
+                                </p>
+                            </div>
+                            <div class="col-3">
+                                <!-- Duration -->
+                                <p><i class="far fa-clock"></i> <%= data[i].duration %> min</p>
+                            </div>
+                            <div class="col-1">
+                                <p style="text-align: right">
+                                    <a href="#"><i class="fas fa-edit"></i></a>
+                                    <a href="#"><i class="far fa-trash-alt"></i></a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                    <% } %>
+                    <br>
                 </div>
             </div>
         </div>
