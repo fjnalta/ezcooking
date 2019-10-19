@@ -1,3 +1,5 @@
+let newIngredients = 999;
+
 function loadData(id) {
     getIngredients(id);
 }
@@ -82,7 +84,7 @@ function prepareIngredientDropdown(ingredientId, data) {
     $("#dropdown-menu-ingredients_" + ingredientId).empty();
     $("#dropdownIngredient_" + ingredientId).prop('disabled', false);
     for(let i=0;i<data.length;i++) {
-        $('<button/>').addClass('dropdown-item').prop({ type: 'button' }).text(data[i].name + ' (' + data[i].shortName + ')').click(function () {
+        $('<button/>').addClass('dropdown-item').prop({ type: 'button' }).text(data[i].name).click(function () {
             // Set Menu Text
             $('#dropdownIngredient_' + ingredientId).text(data[i].name + ' (' + data[i].shortName + ')');
             // Enable Update Button
@@ -93,10 +95,42 @@ function prepareIngredientDropdown(ingredientId, data) {
     }
 }
 
-function deleteDish(dishId) {
+function deleteIngredient(dishId) {
     $("#ingredientsRow_" + dishId).remove();
 }
 
 function addIngredientRow() {
-    console.log('DM');
+    $("#ingredientsTable").append("<tr id='ingredientsRow_" + newIngredients + "'>" +
+        "<td>" +
+        "<p>" +
+        "<input type='text' class='form-control' id='nameInput_" + newIngredients + "'>" +
+        "</p>" +
+        "</td>" +
+        "<td>" +
+        "<p>" +
+        "<input type='text' class='form-control' id='countInput_" + newIngredients + "'>" +
+        "</p>" +
+        "</td>" +
+        "<td>" +
+        "<div class='dropdown'>" +
+        "<button class='btn btn-info dropdown-toggle' type='button' id='dropdownIngredient_" + newIngredients + "' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>" +
+        "Einheit" +
+        "</button>" +
+        "<div class='dropdown-menu' id='dropdown-menu-ingredients_" + newIngredients + "'>" +
+        "</div>" +
+        "</div>" +
+        "</td>" +
+        "<td>" +
+        "<p style=\"text-align: right\" id=\"ingredientsRow_<%= data.ingredients[i].id %>_action\">" +
+        "<a id='ingredientsRow_" + newIngredients + "_deleteAction' onclick=deleteIngredient(" + newIngredients + ");><i class='far fa-trash-alt'></i></a>" +
+        "</p>" +
+        "</td>" +
+        "</tr>");
+
+    getIngredients(newIngredients);
+
+    newIngredients--;
 }
+
+// TODO - gather information and save dish
+// TODO - some logic to now save empty ingredients / units
