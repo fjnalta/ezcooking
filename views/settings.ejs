@@ -1,6 +1,9 @@
 <!-- include static header -->
 <% include partials/header.ejs %>
 
+<!-- Include additional scripts -->
+<script src="../public/js/settingsLogic.js"></script>
+
 <!-- dynamic main content -->
 <div class="container">
     <!-- move the content one row down -->
@@ -43,7 +46,7 @@
                             <p>Name: <span class="badge badge-primary"><%= session.username %></span></p>
                         </div>
                         <div class="col-2">
-                            <p style="text-align: right"><a href="#"><i class="fas fa-edit"></i></a></p>
+                            <% include modals/change-name-modal.ejs %>
                         </div>
                     </div>
 
@@ -52,7 +55,7 @@
                             <p>Email: <span class="badge badge-primary"><%= session.email %></span></p>
                         </div>
                         <div class="col-2">
-                            <p style="text-align: right"><a href="#"><i class="fas fa-edit"></i></a></p>
+                            <% include modals/change-email-modal.ejs %>
                         </div>
                     </div>
 
@@ -64,14 +67,13 @@
                             <p>Passwort ändern</p>
                         </div>
                         <div class="col-2">
-                            <p style="text-align: right"><a href="#"><i class="fas fa-edit"></i></a></p>
+                            <% include modals/change-password-modal.ejs %>
                         </div>
                     </div>
 
                     <div class="dropdown-divider"></div>
                     <br>
-                    <h2>Account Löschen</h2>
-                    <p><button type="button" class="btn btn-danger" id="btnDeleteAccount">Meinen Account löschen</button></p>
+                        <% include modals/delete-account-modal.ejs %>
                     <br>
                 </div>
             </div>

@@ -5,7 +5,7 @@ function loadData(id) {
 }
 
 /**
- * Load Categories from DB
+ * Load Categories
  */
 function loadMainCategories() {
     $.ajax({
@@ -18,6 +18,10 @@ function loadMainCategories() {
     });
 }
 
+/**
+ *
+ * @param data
+ */
 function populateCategories(data) {
     for(let i=0;i<data.length;i++) {
         $("<button/>").addClass("dropdown-item").prop({ type: "button" }).text(data[i].name).click(function () {
@@ -122,7 +126,7 @@ function addIngredientRow() {
             "</td>" +
             "<td>" +
                 "<p style='text-align: right' id='ingredientsRow_" + newIngredients + "_action'>" +
-                    "<a id='ingredientsRow_" + newIngredients + "_deleteAction' onclick=deleteIngredient(" + newIngredients + ");><i class='far fa-trash-alt'></i></a>" +
+                    "<button class='btn' id='ingredientsRow_" + newIngredients + "_deleteAction' onclick=deleteIngredient(" + newIngredients + ");><i class='far fa-trash-alt'></i></button>" +
                 "</p>" +
             "</td>" +
         "</tr>");

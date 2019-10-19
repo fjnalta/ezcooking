@@ -1,0 +1,27 @@
+<!-- change icon -->
+<p><button type="button" data-toggle="modal" data-target="#deleteAccountModal<%= data.id %>" class="btn btn-danger" id="btnDeleteAccount">Meinen Account löschen</button></p>
+
+<!-- change username Modal -->
+<div class="modal fade" id="deleteAccountModal<%= data.id %>" tabindex="-1" role="dialog" aria-labelledby="deleteAccountModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteAccountModalLabel">Account löschen</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>E-Mail Adresse:</p>
+                <input type="text" class="form-control" id="inputEmail" aria-describedby="basic-addon2" placeholder="E-Mail Adresse eingeben">
+                <br>
+                <p>Passwort:</p>
+                <input type="password" class="form-control" id="inputPassword" aria-describedby="basic-addon2" placeholder="aktuelles Passwort eingeben">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Schließen</button>
+                <button type="button" class="btn btn-danger" onclick="deleteAccount()">Account löschen</button>
+            </div>
+        </div>
+    </div>
+</div>

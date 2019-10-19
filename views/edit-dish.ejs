@@ -121,7 +121,7 @@
                                             </td>
                                             <td>
                                                 <p style="text-align: right" id="ingredientsRow_<%= data.ingredients[i].id %>_action">
-                                                    <a id="ingredientsRow_<%= data.ingredients[i].id %>_deleteAction" onclick="deleteIngredient(<%= data.ingredients[i].id %>);"><i class="far fa-trash-alt"></i></a>
+                                                    <button class="btn" id="ingredientsRow_<%= data.ingredients[i].id %>_deleteAction" onclick="deleteIngredient(<%= data.ingredients[i].id %>);"><i class="far fa-trash-alt"></i></button>
                                                 </p>
                                             </td>
                                         </tr>
@@ -131,7 +131,7 @@
                                 </tbody>
                             </table>
                             <div class="col">
-                                <p style="text-align: right"><a onclick="addIngredientRow();"><i class="far fa-plus-square"></i></a></p>
+                                <p style="text-align: right"><button class="btn" onclick="addIngredientRow();"><i class="far fa-plus-square"></i></button></p>
                             </div>
                         </div>
                     </div>
