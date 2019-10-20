@@ -90,7 +90,7 @@ function prepareIngredientDropdown(ingredientId, data) {
     for(let i=0;i<data.length;i++) {
         $('<button/>').addClass('dropdown-item').prop({ type: 'button' }).text(data[i].name).click(function () {
             // Set Menu Text
-            $('#dropdownIngredient_' + ingredientId).text(data[i].name + ' (' + data[i].shortName + ')');
+            $('#dropdownIngredient_' + ingredientId).text(data[i].name);
             // Enable Update Button
             $("#buttonUpdateRecipe").prop('disabled', false);
 
