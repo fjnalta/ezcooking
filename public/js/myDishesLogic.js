@@ -2,7 +2,7 @@ function deleteDish(id) {
     $.ajax({
         type: 'DELETE',
         url: '/dish/' + id,
-        success: function(msg){
+        success: function(){
             // TODO - popup
             console.log('Dish deleted!');
             location.reload();

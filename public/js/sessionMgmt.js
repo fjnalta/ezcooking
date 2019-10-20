@@ -6,7 +6,7 @@ function login() {
             'email': $('#loginInputEmail').val(),
             'password': $('#loginInputPassword').val()
         },
-        success: function(msg){
+        success: function(){
             // TODO - popup
             console.log('Logged in!');
             location.reload();
@@ -28,7 +28,7 @@ function logout() {
     $.ajax({
         type: 'POST',
         url: '/logout',
-        success: function(msg){
+        success: function(){
             location.reload();
         }
     });

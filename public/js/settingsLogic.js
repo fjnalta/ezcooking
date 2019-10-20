@@ -7,7 +7,7 @@ function changeName(id) {
             'newUsername': $('#inputNewName').val(),
             'password': $('#inputNamePassword').val()
         },
-        success: function(msg){
+        success: function(){
             // TODO - popup
             console.log('Success!');
             window.location.href = "/";
@@ -29,7 +29,7 @@ function changeEmail(id) {
             'newEmail': $('#inputNewEmail').val(),
             'password': $('#inputEmailPassword').val()
         },
-        success: function(msg){
+        success: function(){
             // TODO - popup
             console.log('Success!');
             window.location.href = "/";
@@ -52,7 +52,7 @@ function changePassword(id) {
             'newPassword': $('#inputNewPassword').val(),
             'newPassword2': $('#inputNewPassword2').val()
         },
-        success: function(msg){
+        success: function(){
             // TODO - popup
             console.log('Success!');
             window.location.href = "/";
@@ -73,7 +73,7 @@ function deleteAccount(id) {
             'action': 3,
             'password': $('#inputPassword').val()
         },
-        success: function(msg){
+        success: function(){
             // TODO - popup
             console.log('Success!');
             window.location.href = "/";
