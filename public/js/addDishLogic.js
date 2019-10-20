@@ -1,6 +1,7 @@
 /**
  * Load Categories from DB
  */
+// TODO - see below
 function loadMainCategories() {
     $.ajax({
         type: 'GET',
@@ -17,6 +18,7 @@ function loadMainCategories() {
  * @param data is a JSON Array of all Categories - format:
  * [{"id":2,"name":"Getränke"}]
  */
+// TODO - see below
 function populateCategories(data) {
     for(let i=0;i<data.length;i++) {
         $("<button/>").addClass("dropdown-item").prop({ type: "button" }).text(data[i].name).click(function () {
@@ -36,6 +38,7 @@ function populateCategories(data) {
  * Load Sub-Category if Category was selected
  * @param id is the DB id of the selected Category
  */
+// TODO - see below
 function loadSubCategories(id) {
     // Call for SubCategories
     $.ajax({
@@ -53,6 +56,7 @@ function loadSubCategories(id) {
  * @param data is a JSON Array of all Categories - format:
  * [{"id":27,"name":"Gemüse","category":3}]
  */
+// TODO - see below
 function populateSubCategories(data) {
     // Activate SubCategory Menu
     $("#dropdown-menu-subcategory").empty();
@@ -67,9 +71,12 @@ function populateSubCategories(data) {
     }
 }
 
+// TODO - until here -> load from backend and populate through EJS - WTF
+
 /**
  * Load Units (Metric) from DB
  */
+// TODO - no! don't load Metrics from db -> send them from backend
 function createIngredientsTable() {
     $.ajax({
         type: 'GET',
@@ -86,6 +93,7 @@ function createIngredientsTable() {
  * It is used to manage all ingredients dynamically.
  * @param units are the loaded Metrics
  */
+// TODO - either create grid in frontend EJS with backend data or implement own logic - see editDishLogic
 function createGrid(units) {
     $("#jsGrid").jsGrid({
         width: "100%",

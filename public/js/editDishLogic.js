@@ -1,3 +1,4 @@
+// TODO - IF own logic is used - outsource it
 let newIngredients = 999;
 
 function loadData(id) {
@@ -7,6 +8,7 @@ function loadData(id) {
 /**
  * Load Categories
  */
+// TODO - nope - from backend pls - populate through ejs
 function loadMainCategories() {
     $.ajax({
         type: 'GET',
@@ -22,6 +24,7 @@ function loadMainCategories() {
  *
  * @param data
  */
+// TODO - nope - from backend pls - populate through ejs
 function populateCategories(data) {
     for(let i=0;i<data.length;i++) {
         $("<button/>").addClass("dropdown-item").prop({ type: "button" }).text(data[i].name).click(function () {
@@ -41,6 +44,7 @@ function populateCategories(data) {
  * Load Sub-Category if Category was selected
  * @param id is the DB id of the selected Category
  */
+// TODO - nope - from backend pls - populate through ejs
 function loadSubCategories(id) {
     // Call for SubCategories
     $.ajax({
@@ -58,6 +62,7 @@ function loadSubCategories(id) {
  * @param data is a JSON Array of all Categories - format:
  * [{"id":27,"name":"Gemüse","category":3}]
  */
+// TODO - nope - from backend pls - populate through ejs
 function populateSubCategories(data) {
     // Activate SubCategory Menu
     $("#dropdown-menu-subcategory").empty();
@@ -72,6 +77,7 @@ function populateSubCategories(data) {
     }
 }
 
+// TODO - nope - from backend pls - populate through ejs
 function getIngredients(ingredientId) {
     $.ajax({
         type: 'GET',
@@ -135,6 +141,7 @@ function addIngredientRow() {
     newIngredients--;
 }
 
+// TODO - fix this - only useful function in this class
 function updateRecipe(id) {
     let formData = new FormData();
 
