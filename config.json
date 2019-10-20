@@ -4,6 +4,7 @@
       "host":"localhost",
       "user":"ezcooking",
       "password":"ezcookingpw",
-      "database":"ezcooking"
+      "database":"ezcooking",
+      "port": "3306"
     }
 }

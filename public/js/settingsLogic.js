@@ -11,6 +11,7 @@ function changeName(id) {
             // TODO - popup
             console.log('Success!');
 //            location.reload();
+            window.location.href = "/";
         },
         error: function() {
             // TODO - popup
