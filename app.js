@@ -28,10 +28,6 @@ app.use('/node_modules', express.static('node_modules'));
 // Set routes
 app.use('/', routes);
 
-process.on('uncaughtException', function (error) {
-    console.log(error.stack);
-});
-
 // Start server
 app.listen(config.port,function () {
     console.log('Server started at Port ' + config.port);
