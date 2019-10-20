@@ -1,3 +1,9 @@
+function register() {
+    console.log('Register!');
+    // TODO - build AJAX backend call
+    // POST - /register
+}
+
 function login() {
     $.ajax({
         type: 'POST',
@@ -8,20 +14,12 @@ function login() {
         },
         success: function(){
             // TODO - popup
-            console.log('Logged in!');
             location.reload();
         },
         error: function() {
             // TODO - popup
-            console.log('error');
         }
     });
-}
-
-function register() {
-    console.log('Register!');
-    // TODO - build AJAX backend call
-    // POST - /register
 }
 
 function logout() {
