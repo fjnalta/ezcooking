@@ -135,8 +135,44 @@ function addIngredientRow() {
     newIngredients--;
 }
 
-function updateRecipe() {
-    // TODO - gather information and save dish
-    // TODO - some logic to now save empty ingredients / units
-    console.log("TODO");
+function updateRecipe(id) {
+    let formData = new FormData();
+
+    let dropdownCategory = $("#dropdownCategory").text().split(" ")[0];
+    let dropdownSubCategory = $("#dropdownSubCategory").text().split(" ")[0];
+
+    let ingredients = [];
+    let rows = $("#ingredientsTable").children('tbody').children('tr');
+    $(rows).each(function() {
+        let name = $(this).find("td").eq(0).find(":input").val();
+        let count = $(this).find("td").eq(1).find(":input").val();
+        let unit = $(this).find("td").eq(2).find(".dropdown").text().split(" ")[0];
+        ingredients.push({ Name: name, Menge: count, Einheit: unit});
+    });
+
+    // gather recipe information
+    formData.append('name',$("#dishInputName").val());
+    formData.append('shortDescription', $("#dishInputShortDescription").val());
+    formData.append('duration', $("#dishInputDuration").val());
+    formData.append('category', dropdownCategory);
+    formData.append('subCategory', dropdownSubCategory);
+    formData.append('ingredients', JSON.stringify(ingredients));
+    formData.append('description', $("#dishInputDescription").val());
+    formData.append('data',$("#dishUploadImage")[0].files[0]);
+
+    $.ajax({
+        url: '/dish' + id,
+        data: formData,
+        contentType: false,
+        processData: false,
+        cache: false,
+        type: 'POST',
+        success: function(data){
+            // Redirect frontend
+            window.location.replace(data);
+        }
+    });
+
+    // Disable button to prevent double postings
+    $("#buttonUpdateRecipe").prop('disabled', true);
 }
