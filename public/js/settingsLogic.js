@@ -10,7 +10,6 @@ function changeName(id) {
         success: function(msg){
             // TODO - popup
             console.log('Success!');
-//            location.reload();
             window.location.href = "/";
         },
         error: function() {
@@ -21,36 +20,68 @@ function changeName(id) {
     });
 }
 
-// function changeEmail(id){
-//     req.body.action
-//     req.body.newEmail, req.body.password
-// }
-//
-// function changePassword(id) {
-//     req.body.action
-//     req.body.password, req.body.newPassword, req.body.newPassword2
-//
-//     $.ajax({
-//         type: 'POST',
-//         url: '/user' + session.userId,
-//         data: {
-//             'email': $('#loginInputEmail').val(),
-//             'password': $('#loginInputPassword').val()
-//         },
-//         success: function(msg){
-//             // TODO - popup
-//             console.log('Logged in!');
-//             location.reload();
-//         },
-//         error: function() {
-//             // TODO - popup
-//             console.log('error');
-//         }
-//     });
-// }
-//
-// function deleteAccount(id) {
-//     req.body.action
-//     req.body.email, req.body.password, req.body.newPassword2
-//     console.log('lul');
-// }
+function changeEmail(id) {
+    $.ajax({
+        type: 'POST',
+        url: '/user/' + id,
+        data: {
+            'action': 1,
+            'newEmail': $('#inputNewEmail').val(),
+            'password': $('#inputEmailPassword').val()
+        },
+        success: function(msg){
+            // TODO - popup
+            console.log('Success!');
+            window.location.href = "/";
+        },
+        error: function() {
+            // TODO - popup
+            console.log('Error changing Username!');
+            location.reload();
+        }
+    });
+}
+
+function changePassword(id) {
+    $.ajax({
+        type: 'POST',
+        url: '/user/' + id,
+        data: {
+            'action': 2,
+            'password': $('#inputOldPassword').val(),
+            'newPassword': $('#inputNewPassword').val(),
+            'newPassword2': $('#inputNewPassword2').val()
+        },
+        success: function(msg){
+            // TODO - popup
+            console.log('Success!');
+            window.location.href = "/";
+        },
+        error: function() {
+            // TODO - popup
+            console.log('Error changing Username!');
+            location.reload();
+        }
+    });
+}
+
+function deleteAccount(id) {
+    $.ajax({
+        type: 'POST',
+        url: '/user/' + id,
+        data: {
+            'action': 3,
+            'password': $('#inputPassword').val()
+        },
+        success: function(msg){
+            // TODO - popup
+            console.log('Success!');
+            window.location.href = "/";
+        },
+        error: function() {
+            // TODO - popup
+            console.log('Error changing Username!');
+            location.reload();
+        }
+    });
+}
