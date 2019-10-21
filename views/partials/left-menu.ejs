@@ -1,6 +1,12 @@
 <!-- show login/register menu item if not logged in -->
-<div class="list-group">
-    <% if(!session) { %>
+<% if(!session) { %>
+    <div class="list-group">
+        <li class="list-group-item">Hauptmenü</li>
+        <a href="/" class="list-group-item list-group-item-action">Neue Gerichte</a>
+        <a href="/browse" class="list-group-item list-group-item-action">Durchsuchen</a>
+    </div>
+    <br>
+    <div class="list-group">
         <button type="button" class="list-group-item list-group-item-action" data-toggle="modal"
                 data-target="#loginModal">Login<span
                     class="badge badge-primary float-right">
@@ -8,32 +14,35 @@
         <button type="button" class="list-group-item list-group-item-action" data-toggle="modal"
                 data-target="#registerModal">Register
         </button>
-</div>
-<br>
-<div class="list-group">
-    <a href="/" class="list-group-item list-group-item-action">Home</a>
-    <a href="/browse" class="list-group-item list-group-item-action">Durchsuchen</a>
-    <% } else { %>
-        <li class="list-group-item">Benutzermenü</li>
+    </div>
+    <br>
+<% } %>
+<% if(session) { %>
+    <div class="list-group">
         <li class="list-group-item list-group">Eingeloggt als: <span class="badge badge-primary float-right">
             <%= session.username %></span></li>
         <a href="/dish" class="list-group-item list-group-item-action"
            style="background-color: #218838; border-color: #1e7e34; color: whitesmoke">Gericht hinzufügen</a>
+    </div>
+    <br>
+    <div class="list-group">
+        <li class="list-group-item">Hauptmenü</li>
+        <a href="/" class="list-group-item list-group-item-action">Neue Rezepte</a>
+        <a href="/browse" class="list-group-item list-group-item-action">Durchsuchen</a>
+    </div>
+    <br>
+    <div class="list-group">
+        <li class="list-group-item">Benutzermenü</li>
+        <!--
         <a href="/favorites" class="list-group-item list-group-item-action">Favoriten</a>
+        -->
         <a href="/mydishes" class="list-group-item list-group-item-action">Meine Rezepte</a>
         <a href="/settings" class="list-group-item list-group-item-action">Einstellungen</a>
         <a href="#" class="list-group-item list-group-item-action"
            style="background-color: #c82333; border-color: #bd2130; color: whitesmoke" onclick="logout()">Logout</a>
-</div>
-<br>
-<div class="
-        list-group">
-    <li class="list-group-item">Hauptmenü</li>
-    <a href="/" class="list-group-item list-group-item-action">Home</a>
-    <a href="/browse" class="list-group-item list-group-item-action">Durchsuchen</a>
-    <% } %>
-</div>
-<br>
+    </div>
+    <br>
+<% } %>
 
 <div class="list-group">
     <img src="/public/img/default.jpg" class="img-thumbnail">
