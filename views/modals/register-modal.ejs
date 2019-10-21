@@ -3,7 +3,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="registerModalLabel">Register</h5>
+                <h5 class="modal-title" id="registerModalLabel">Registrieren</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -11,25 +11,41 @@
             <div class="modal-body">
                 <form>
                     <div class="form-group">
-                        <label for="registerInputEmail">Email address</label>
+                        <label for="registerInputEmail">Benutzername</label>
+                        <input type="text" class="form-control" id="registerInputUsername" aria-describedby="registerInputUsernameHelp"
+                               placeholder="Benutzername eingeben">
+                        <small id="registerInputUsernameHelp" class="form-text text-muted">
+                            Der Benutzername ist für andere Nutzer öffentlich und wird verwendet, um Rezepte einem Ersteller zuzuordnen.
+                            Der Benutzername kann jederzeit geändert werden.
+                        </small>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerInputEmail">E-Mail Adresse</label>
                         <input type="email" class="form-control" id="registerInputEmail" aria-describedby="registerEmailHelp"
-                            placeholder="Enter email">
-                        <small id="registerEmailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                            placeholder="Email eingeben">
+                        <small id="registerEmailHelp" class="form-text text-muted">
+                            Die E-Mail Adresse wird zum Login genutzt. Außerdem können hiermit Benutzername und Passwort zurückgesetzt werden.
+                            Die E-Mail Adresse kann jederzeit geändert werden.
+                        </small>
                     </div>
                     <div class="form-group">
-                        <label for="registerInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="registerInputPassword1" placeholder="Enter password">
+                        <label for="registerInputPassword1">Passwort</label>
+                        <input type="password" class="form-control" id="registerInputPassword1" aria-describedby="registerPasswortHelp" placeholder="Passwort eingeben">
+                        <small id="registerPasswortHelp" class="form-text text-muted">
+                            Bitte geben Sie ihr Passwort ein.<br>
+                            Das Passwort muss den folgenden Richtlinien entprechen:
+                        </small>
                     </div>
                     <div class="form-group">
-                            <label for="registerInputPassword2">Password</label>
-                            <input type="password" class="form-control" id="registerInputPassword2" placeholder="Enter password">
-                            <small id="registerEmailHelp" class="form-text text-muted">Repeat your password.</small>
+                            <label for="registerInputPassword2">Passwort</label>
+                            <input type="password" class="form-control" id="registerInputPasswort2" aria-describedby="registerPasswort2Help" placeholder="Passwort wiederholen">
+                            <small id="registerPasswort2Help" class="form-text text-muted">Bitte wiederholen Sie ihr gewähltes Passwort.</small>
                         </div>
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary" onclick="register()">Register</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Schließen</button>
+                <button type="submit" class="btn btn-success" onclick="register()">Registrieren</button>
             </div>
         </div>
     </div>
