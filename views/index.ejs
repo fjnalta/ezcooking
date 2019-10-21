@@ -18,27 +18,29 @@
             <div class="card card-header">
                     Neue Rezepte
             </div>
-            <!-- first row items -->
-            <div class="row">
-            <% for(let i=0;i<6;i++) { %>
-                <!-- break after 3 items -->
-                    <%  if(i % 3 == 0) { %>
-                        </div>
-                        <!-- end first row items -->
-                        <br>
-                        <!-- second row items -->
-                        <div class="row">
-                    <%  } %>
-                    <!-- populate items -->
-                    <div class="col-4">
-                        <div class="card" style="max-width: 18rem;">
-                            <a href="/dish/<%= data[i].id %>"><img src="/public/uploads/<%= data[i].image_name %>" class="card-img-top"></a>
-                            <div class="card-body">
-                                <p class="card-text"><%= data[i].name %></p>
-                                    <p><small><%= data[i].short_description %></small></p>
+            <% if(data[0]) { %>
+                <!-- first row items -->
+                <div class="row">
+                <% for(let i=0;i<data.length;i++) { %>
+                    <!-- break after 3 items -->
+                        <%  if(i % 3 == 0) { %>
+                            </div>
+                            <!-- end first row items -->
+                            <br>
+                            <!-- second row items -->
+                            <div class="row">
+                        <%  } %>
+                        <!-- populate items -->
+                        <div class="col-4">
+                            <div class="card" style="max-width: 18rem;">
+                                <a href="/dish/<%= data[i].id %>"><img src="/public/uploads/<%= data[i].image_name %>" class="card-img-top"></a>
+                                <div class="card-body">
+                                    <p class="card-text"><%= data[i].name %></p>
+                                        <p><small><%= data[i].short_description %></small></p>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                <%  } %>
             <%  } %>
             </div>
             <!-- end second row items -->
