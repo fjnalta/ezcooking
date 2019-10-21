@@ -8,12 +8,12 @@
     <!-- everything in this div in one row -->
     <div class="row">
         <!-- left menu -->
-        <div class="col-3">
+        <div class="col-md-3 col-sm-12">
             <!-- include left menu -->
             <% include partials/left-menu.ejs %>
         </div>
         <!-- main content -->
-        <div class="col-9">
+        <div class="col-md-9 col-sm-12">
             <!-- Heading -->
             <div class="card card-header">
                     Neue Rezepte
@@ -33,7 +33,7 @@
                         <!-- populate items -->
                         <div class="col-4">
                             <div class="card" style="max-width: 18rem;">
-                                <a href="/dish/<%= data[i].id %>"><img src="/public/uploads/<%= data[i].image_name %>" class="card-img-top"></a>
+                                <a href="/dish/<%= data[i].id %>"><img src="/public/uploads/<%= data[i].image_name %>" class="card-img-top" style="height: 150px"></a>
                                 <div class="card-body">
                                     <p class="card-text"><%= data[i].name %></p>
                                         <p><small><%= data[i].short_description %></small></p>
