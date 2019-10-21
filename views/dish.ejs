@@ -25,7 +25,7 @@
                         <div class="col-3">
                             <p style="text-align: right">
                                 Dauer: <%= data.duration %>min<br>
-                                Ersteller: <%= data.creator %>
+                                Ersteller: <a href="/user/<%= data.creator_id %>"><%= data.creator %></a>
                             </p>
                         </div>
                     </div>
