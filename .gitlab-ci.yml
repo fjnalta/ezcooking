@@ -1,0 +1,24 @@
+# move files
+before_script:
+  - echo pwd
+  - echo ls -lah
+  - echo "Before script section"
+  - echo "For example you might run an update here or install a build dependency"
+  - echo "Or perhaps you might print out some debugging details"
+
+# start nodejs
+after_script:
+  - echo "After script section"
+  - echo "For example you might do some cleanup here"
+
+# install node_modules
+build1:
+  stage: build
+  script:
+    - echo "Do your build here"
+
+
+deploy1:
+  stage: deploy
+  script:
+    - echo "Do your deploy here"
