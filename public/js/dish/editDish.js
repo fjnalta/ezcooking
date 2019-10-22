@@ -2,6 +2,8 @@ function updateRecipe(id) {
     // create FormData so Node.js can handle it
     let formData = new FormData();
 
+    console.log('asdasd' + editor.html.get());
+
     // gather recipe information
     formData.append('name',$("#dishInputName").val());
     formData.append('shortDescription', $("#dishInputShortDescription").val());
@@ -9,7 +11,7 @@ function updateRecipe(id) {
     formData.append('category', $("#dropdownCategory").text().trim());
     formData.append('subCategory', $("#dropdownSubCategory").text().trim());
     formData.append('ingredients', JSON.stringify($("#jsGrid").jsGrid("option", "data")));
-    formData.append('description', $("#dishInputDescription").val());
+    formData.append('description', editor.html.get());
 
     // only append image if a new one is set
     let uploadImage = $("#dishUploadImage")[0].files[0];

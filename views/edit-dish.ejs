@@ -105,13 +105,12 @@
                     <label for="dishInputDescription">Beschreibung</label>
                     <div class="row">
                         <div class="col-12">
+                            <div id="preparationContent" style="display: none"><%= data.preparation %></div>
                             <div id="dishInputDescription">
                                 <script>initializeEditorWithContent();</script>
                             </div>
-                            <div id="preparationContent" hidden><%= data.preparation %></div>
                         </div>
                     </div>
-
                     <br>
                     <div class="dropdown-divider"></div>
                     <br>

@@ -5,8 +5,6 @@ function sendRecipe() {
     // create FormData so Node.js can handle it
     let formData = new FormData();
 
-    console.log(editor.html.get());
-
     // gather recipe information
     formData.append('name',$("#dishInputName").val());
     formData.append('shortDescription', $("#dishInputShortDescription").val());
