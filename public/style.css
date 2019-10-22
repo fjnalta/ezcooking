@@ -1,3 +1,12 @@
+body, nav-link {
+    background-color: #f8f9fa;
+    font-family: 'Nunito', sans-serif;
+}
+
+.navbar-nav a {
+    font-family: 'Nunito', sans-serif;
+}
+
 #spacing-nav {
     padding-right: 5px;
     padding-left: 5px;
