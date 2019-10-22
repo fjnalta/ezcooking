@@ -13,5 +13,4 @@ deploy1:
     - echo "Install node_modules"
     - npm install --save
     - echo "(Re)Start node app"
-    - pwd
     - pm2 restart app.js
