@@ -2,7 +2,6 @@
 
 ## Overview
 
-TODO
 
 ## Installation
 ### Prerequisites
