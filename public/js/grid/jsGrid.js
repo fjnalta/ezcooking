@@ -56,7 +56,4 @@ async function createFilledIngredientsTable(id) {
         },
         dataType: "json"
     });
-
-    let data = [{ Name: "Name", Menge: "asd", Einheit: 3 },
-        { Name: "Name", Menge: "text", Einheit: 2 }];
 }
