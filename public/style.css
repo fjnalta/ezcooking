@@ -3,6 +3,14 @@ body, nav-link {
     font-family: 'Nunito', sans-serif;
 }
 
+.list-group-item {
+    background-color: rgba(0,0,0,.03);
+}
+
+.list-group-item-action {
+    background-color: #ffffff;
+}
+
 .navbar-nav a {
     font-family: 'Nunito', sans-serif;
     font-variant-caps: small-caps;
