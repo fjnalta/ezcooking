@@ -5,6 +5,7 @@ body, nav-link {
 
 .navbar-nav a {
     font-family: 'Nunito', sans-serif;
+    font-variant-caps: small-caps;
 }
 
 #spacing-nav {
