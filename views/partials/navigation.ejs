@@ -1,23 +1,25 @@
 <!-- top navigation -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/"><img src="/public/img/favicon.ico" width="30" height="30" class="d-inline-block align-top"
-                                          alt=""></a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/"><img src="/public/img/favicon.ico" width="30" height="30"
+                                          class="d-inline-block align-top"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-            <a class="nav-link" href="/"><strong>Home</strong></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/browse"><strong>Durchsuchen</strong></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="https://gitlab.ezlife.eu/ajo/ezcooking/issues"><strong>Bugtracker</strong></a>
-        </li>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/browse">Durchsuchen</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://gitlab.ezlife.eu/ajo/ezcooking/issues">Bugtracker</a>
+            </li>
 
-    </ul>
+        </ul>
+    </div>
     <ul class="navbar-nav navbar-right">
         <!-- use css to create spacing between buttons -->
         <div id="spacing-nav"></div>
@@ -32,14 +34,14 @@
         <!-- use css to create spacing between buttons -->
         <div id="spacing-nav"></div>
         <% if(session) { %>
-        <li class="nav-item">
-            <button class="btn btn-danger" type="button" id="logoutBtn" onclick="logout()">Logout</button>
-        </li>
+            <li class="nav-item">
+                <button class="btn btn-danger" type="button" id="logoutBtn" onclick="logout()">Logout</button>
+            </li>
         <% } else{ %>
-        <li class="nav-item">
-            <% include ../modals/login-modal.ejs %>
-            <% include ../modals/register-modal.ejs %>
-        </li>
+            <li class="nav-item">
+                <% include ../modals/login-modal.ejs %>
+                    <% include ../modals/register-modal.ejs %>
+            </li>
         <% } %>
     </ul>
 </nav>
