@@ -12,8 +12,9 @@ function updateRecipe(id) {
     formData.append('description', $("#dishInputDescription").val());
 
     // only append image if a new one is set
-    if($("#dishUploadImage")[0].files[0] !== undefined) {
-        formData.append('data',$("#dishUploadImage")[0].files[0]);
+    let uploadImage = $("#dishUploadImage")[0].files[0];
+    if(uploadImage !== undefined) {
+        formData.append('data',uploadImage);
     }
 
     // Disable button to prevent double postings
