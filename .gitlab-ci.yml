@@ -1,25 +1,16 @@
 # move files
 before_script:
-  - pwd
-  - ls -lah
-  - whoami
-  - echo "Before script section"
-  - echo "For example you might run an update here or install a build dependency"
-  - echo "Or perhaps you might print out some debugging details"
-
-# start nodejs
-after_script:
-  - echo "After script section"
-  - echo "For example you might do some cleanup here"
-
-# install node_modules
-build1:
-  stage: build
-  script:
-    - echo "Do your build here"
-
-
+  - echo "Modify configuration for production"
+  - sed -i 's/3000/4000/g' config.json
+  - echo "Moving files to public directory"
+  - cp -r * /var/www/ezcooking
+# install node_modules and deploy application
 deploy1:
   stage: deploy
   script:
-    - echo "Do your deploy here"
+    - echo "Switch to new working directory"
+    - cd /var/www/ezcooking/
+    - echo "Install node_modules"
+    - npm install --save
+    - echo "(Re)Start node app"
+    - pm2 restart app.js
