@@ -1,4 +1,4 @@
-function register() {
+function registerUser() {
     $.ajax({
         type: 'POST',
         url: '/register',
