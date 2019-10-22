@@ -5,7 +5,7 @@ before_script:
   - echo "Moving files to public directory"
   - cp -r * /var/www/ezcooking
 # install node_modules and deploy application
-deploy_to_production:
+deploy1:
   stage: deploy
   script:
     - echo "Switch to new working directory"
