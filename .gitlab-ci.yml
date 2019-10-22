@@ -14,3 +14,5 @@ deploy1:
     - npm install --save
     - echo "(Re)Start node app"
     - pm2 restart app.js
+
+# Todo change production password as well
