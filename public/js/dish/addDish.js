@@ -5,6 +5,8 @@ function sendRecipe() {
     // create FormData so Node.js can handle it
     let formData = new FormData();
 
+    console.log(editor.html.get());
+
     // gather recipe information
     formData.append('name',$("#dishInputName").val());
     formData.append('shortDescription', $("#dishInputShortDescription").val());
@@ -12,7 +14,7 @@ function sendRecipe() {
     formData.append('category', $("#dropdownCategory").text());
     formData.append('subCategory', $("#dropdownSubCategory").text());
     formData.append('ingredients', JSON.stringify($("#jsGrid").jsGrid("option", "data")));
-    formData.append('description', $("#dishInputDescription").val());
+    formData.append('description', editor.html.get());
     formData.append('data',$("#dishUploadImage")[0].files[0]);
 
     // Ajax call to backend

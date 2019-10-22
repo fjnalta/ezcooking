@@ -21,6 +21,7 @@
     "express": "^4.16.4",
     "express-session": "^1.15.6",
     "express-validator": "^5.3.1",
+    "froala-editor": "^3.0.6",
     "jquery": "^3.3.1",
     "jsgrid": "^1.5.3",
     "multer": "^1.4.2",
