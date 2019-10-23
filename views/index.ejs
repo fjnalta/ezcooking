@@ -37,10 +37,11 @@
                         <%  } %>
                         <!-- populate items -->
                         <div class="col-4">
-                            <div class="card" style="max-width: 18rem;">
-                                <a href="/dish/<%= data[i].id %>"><img src="/public/uploads/<%= data[i].image_name %>" class="card-img-top" style="height: 150px" alt="<%= data[i].name %>"></a>
-                                <div class="card-body">
+                            <div class="card">
+                                <a href="/dish/<%= data[i].id %>"><img src="/public/uploads/<%= data[i].image_name %>" class="card-img-top" id="indexCardImgTop" alt="<%= data[i].name %>"></a>
+                                <div class="card-body" id="indexCardBody">
                                     <p class="card-text"><%= data[i].name %></p>
+                                    <div class="dropdown-divider"></div>
                                         <p><small><%= data[i].short_description %></small></p>
                                 </div>
                             </div>

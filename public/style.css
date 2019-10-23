@@ -20,3 +20,13 @@ body, nav-link {
     padding-right: 5px;
     padding-left: 5px;
 }
+
+/* Index Page */
+/* Cards */
+#indexCardBody {
+    height: 150px;
+    overflow: hidden;
+}
+#indexCardImgTop {
+    max-height: 180px;
+}
