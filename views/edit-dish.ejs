@@ -88,11 +88,11 @@
 
                     <h2>Zutaten</h2>
                     <div class="row">
-                        <div class="col-12">
-                            <div class="input-group">
-                                <textarea class="form-control" aria-label="With textarea" rows="12"
-                                          id="dishInputDescription"><%= data.preparation %></textarea>
-                            </div>
+                        <div class="col">
+                            <!-- Define jsGrid reference -->
+                            <div id="jsGrid"></div>
+                            <!-- Create Ingredients Table from jsGrid -->
+                            <script>createFilledIngredientsTable(<%= data.id %>);</script>
                         </div>
                     </div>
 
