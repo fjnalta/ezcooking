@@ -9,7 +9,7 @@ function updateRecipe(id) {
     formData.append('category', $("#dropdownCategory").text().trim());
     formData.append('subCategory', $("#dropdownSubCategory").text().trim());
     formData.append('ingredients', JSON.stringify($("#jsGrid").jsGrid("option", "data")));
-    formData.append('description', $("#dishInputDescription").val());
+    formData.append('description', $('#dishInputDescription').summernote('code'));
 
     // only append image if a new one is set
     let uploadImage = $("#dishUploadImage")[0].files[0];

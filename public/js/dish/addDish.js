@@ -12,7 +12,7 @@ function sendRecipe() {
     formData.append('category', $("#dropdownCategory").text());
     formData.append('subCategory', $("#dropdownSubCategory").text());
     formData.append('ingredients', JSON.stringify($("#jsGrid").jsGrid("option", "data")));
-    formData.append('description', $("#dishInputDescription").val());
+    formData.append('description', $('#dishInputDescription').summernote('code'));
     formData.append('data',$("#dishUploadImage")[0].files[0]);
 
     // Ajax call to backend

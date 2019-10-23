@@ -6,6 +6,7 @@
 <script src="/../public/js/dish/manageCategories.js"></script>
 <script src="/../public/js/dish/editDish.js"></script>
 <script src="/../public/js/grid/jsGrid.js"></script>
+<script src="/../public/js/dish/editor.js"></script>
 
 <!-- dynamic main content -->
 <div class="container">
@@ -102,17 +103,14 @@
                     <label for="dishInputDescription">Beschreibung</label>
                     <div class="row">
                         <div class="col-12">
-                            <div class="input-group">
-                                <textarea class="form-control" aria-label="With textarea" rows="12"
-                                          id="dishInputDescription"><%= data.preparation %></textarea>
-                            </div>
+                            <div id="dishInputDescription"></div>
                         </div>
+                        <div id="dishPreparation" hidden><%= data.preparation %></div>
+                        <script>loadEditor();loadContent();</script>
                     </div>
-
                     <br>
                     <div class="dropdown-divider"></div>
                     <br>
-
                     <div class="row">
                         <div class="col-12">
                             <button type="button" class="btn btn-primary float-right" id="buttonUpdateRecipe"
