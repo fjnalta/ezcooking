@@ -1,6 +1,5 @@
-body, nav-link {
+body, nav-link, button {
     background-color: #f8f9fa;
-    font-family: 'Nunito', sans-serif;
 }
 
 .list-group-item {
@@ -12,7 +11,6 @@ body, nav-link {
 }
 
 .navbar-nav a {
-    font-family: 'Nunito', sans-serif;
     font-variant-caps: small-caps;
 }
 
