@@ -36,8 +36,8 @@
                             <div class="row">
                         <%  } %>
                         <!-- populate items -->
-                        <div class="col-4">
-                            <div class="card">
+                        <div class="col-xs-12 col-sm-4">
+                            <div class="card" id="indexCard">
                                 <a href="/dish/<%= data[i].id %>"><img src="/public/uploads/<%= data[i].image_name %>" class="card-img-top" id="indexCardImgTop" alt="<%= data[i].name %>"></a>
                                 <div class="card-body" id="indexCardBody">
                                     <p class="card-text"><%= data[i].name %></p>
@@ -45,6 +45,7 @@
                                         <p><small><%= data[i].short_description %></small></p>
                                 </div>
                             </div>
+                            <br>
                         </div>
                 <%  } %>
             <%  } %>

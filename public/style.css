@@ -21,10 +21,30 @@ body, nav-link, button {
 
 /* Index Page */
 /* Cards */
-#indexCardBody {
-    height: 150px;
-    overflow: hidden;
+/* 350px and down */
+@media only screen and (max-width: 350px) {
+    #indexCardBody {
+        height: 100px;
+        overflow: hidden;
+    }
+    #indexCardImgTop {
+        height: 120px;
+    }
 }
-#indexCardImgTop {
-    max-height: 180px;
+
+/* 350px and up */
+@media only screen and (min-width: 350px) {
+    #indexCardBody {
+        height: 100px;
+        overflow: hidden;
+    }
+    #indexCardImgTop {
+        height: 160px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #left-menu-banner {
+        display: none;
+    }
 }
