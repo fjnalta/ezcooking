@@ -19,6 +19,12 @@ body, nav-link, button {
     padding-left: 5px;
 }
 
+#uploadImage {
+    max-width: 150px;
+    max-width: 150px;
+}
+
+
 /* Index Page */
 /* Cards */
 /* 350px and down */
