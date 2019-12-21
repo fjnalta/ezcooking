@@ -1,5 +1,5 @@
 <!-- include static header -->
-<% include partials/header.ejs %>
+<% include ../partials/header.ejs %>
 
 <!-- dynamic main content -->
 <div class="container">
@@ -10,7 +10,7 @@
         <!-- left menu -->
         <div class="col-sm-12 col-md-3">
             <!-- include left menu -->
-            <% include partials/left-menu.ejs %>
+            <% include ../partials/left-menu.ejs %>
         </div>
 
         <!-- main content -->
@@ -20,9 +20,9 @@
                     <br>
                     <h1>Error</h1>
                     <br>
-                    <p>Dieser Bereich ist nur mit gültigem Benutzer zugänglich.</p>
-                    <p>Bitte loggen Sie sich zuerst ein</p>
-                    <% include modals/login-modal.ejs %>
+                    <p>Die angeforderte Seite konnte nicht gefunden werden</p>
+                    <br>
+                    <p>Zurück zur <a href="/">Übersicht</a></p>
                     <p></p>
                 </div>
             </div>
@@ -31,6 +31,6 @@
 
 </div>
 <!-- include static footer -->
-<% include partials/footer.ejs %>
+<% include ../partials/footer.ejs %>
 <!-- spacing at content end -->
 <br>
