@@ -19,8 +19,8 @@ body, nav-link, button {
     padding-left: 5px;
 }
 
-/* Add Dish / Edit Dish */
-#uploadImage {
+/* Add Dish / Edit Dish / AdminMenu */
+#uploadImage, #uploadCategoryImage, #uploadSubCategoryImage {
     max-width: 150px;
     max-height: 150px;
 }

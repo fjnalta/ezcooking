@@ -1,6 +1,9 @@
 <!-- include static header -->
 <% include partials/header.ejs %>
 
+<!-- Include additional scripts -->
+<script src="../public/js/admin/manageAdminImageUpload.js"></script>
+
 <!-- dynamic main content -->
 <div class="container">
     <!-- move the content one row down -->
@@ -70,7 +73,7 @@
                                 </div>
                                 <div class="col-3">
                                     Banner
-                                    <img src="/public/img/no_image" class="img-thumbnail">
+                                    <img src="/public/img/no_image" class="img-thumbnail" id="uploadCategoryImage">
                                     <input type="file" class="form-control-file" id="categoryUploadImage" onchange="loadCategoryImage(this)">
                                 </div>
                                 <div class="col-3">
@@ -139,7 +142,7 @@
                                 </div>
                                 <div class="col-3">
                                     Bild hinzufügen
-                                    <img src="/public/img/no_image" class="img-thumbnail">
+                                    <img src="/public/img/no_image" class="img-thumbnail" id="uploadSubCategoryImage">
                                     <input type="file" class="form-control-file" id="subCategoryUploadImage" onchange="loadSubCategoryImage(this)">
                                 </div>
                                 <div class="col-3">
