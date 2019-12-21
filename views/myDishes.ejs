@@ -31,7 +31,7 @@
                             <div class="col-2">
                                 <a href="/dish/<%= data[i].id %>"><img src="/public/uploads/<%= data[i].image_name %>" alt="<%= data[i].name %>" class="img-thumbnail" id="myDishesImage"></a>
                             </div>
-                            <div class="col-6">
+                            <div class="col-4">
                                 <p>
                                     Gericht: <%= data[i].name %><br>
                                     <small><%= data[i].short_description %></small>
@@ -41,11 +41,12 @@
                                 <!-- Duration -->
                                 <p><i class="far fa-clock"></i> <%= data[i].duration %> min.</p>
                             </div>
-                            <div class="col-1">
-                                <p style="text-align: right">
-                                    <a href="/dish/<%= data[i].id %>/edit"><button class="btn"><i class="fas fa-edit"></i></button></a>
-                                    <!-- include delete modal -->
-                                    <% include modals/delete-dish-modal.ejs %>
+                            <div class="col-3">
+                                <p>
+                                Rezept bearbeiten: <a href="/dish/<%= data[i].id %>/edit"><button class="btn"><i class="fas fa-edit"></i></button></a>
+                                <!-- include delete modal -->
+                                Rezept löschen: <button class="btn" data-toggle="modal" data-target="#deleteDishModal<%= data[i].id %>"><i class="far fa-trash-alt"></i></button>
+                                <% include modals/delete-dish-modal.ejs %>
                                 </p>
                             </div>
                         </div>
