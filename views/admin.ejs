@@ -2,7 +2,7 @@
 <% include partials/header.ejs %>
 
 <!-- Include additional scripts -->
-<script src="../public/js/admin/manageAdminImageUpload.js"></script>
+<script src="../public/js/admin/adminMenu.js"></script>
 
 <!-- dynamic main content -->
 <div class="container">
@@ -68,7 +68,7 @@
                                 <div class="col-5">
                                     Name
                                     <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Name der Kategorie">
+                                        <input type="text" class="form-control" placeholder="Name der Kategorie" id="inputCategoryName">
                                     </div>
                                 </div>
                                 <div class="col-3">
@@ -80,7 +80,8 @@
                                     <p>Kategorie hinzufügen:</p>
                                 </div>
                                 <div class="col-1">
-                                    <p><a href="#"><button class="btn"><i class="fas fa-plus"></i></button></a></p>
+                                    <p><button class="btn" data-toggle="modal" data-target="#addCategoryModal" onclick="setupAddCategoryModal()"><i class="fas fa-plus"></i></button></p>
+                                    <% include modals/admin/addCategoryModal.ejs %>
                                 </div>
                             </div>
 

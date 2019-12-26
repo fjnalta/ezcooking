@@ -2,7 +2,9 @@ const express = require('express');
 const session = require('express-session');
 const bodyParser = require('body-parser');
 const path = require('path');
-const routes = require('./lib/router.js');
+
+const router = require('./lib/router');
+
 const config = require('./config');
 const app = express();
 
@@ -26,7 +28,7 @@ app.use('/public', express.static('public'));
 app.use('/node_modules', express.static('node_modules'));
 
 // Set routes
-app.use('/', routes);
+app.use('/', router);
 
 // Start server
 app.listen(config.port,function () {

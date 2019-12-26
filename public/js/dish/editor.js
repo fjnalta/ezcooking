@@ -19,6 +19,5 @@ function loadEditor() {
 }
 
 function loadContent() {
-    console.log($('#dishPreparation').text());
     $('#dishInputDescription').summernote('code', $('#dishPreparation').text());
 }
