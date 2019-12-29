@@ -9,6 +9,7 @@ function loadMainCategories() {
             populateCategories(msg);
         },
         dataType: "json"
+        // TODO - popup
     });
 }
 
@@ -25,5 +26,6 @@ function loadSubCategories(id) {
             populateSubCategories(msg);
         },
         dataType: "json"
+        // TODO - popup
     });
 }
