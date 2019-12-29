@@ -9,11 +9,13 @@ function registerUser() {
             'password2' : $('#registerInputPasswort2').val()
         },
         success: function(){
-            // TODO - popup
-            location.reload();
+            showRegistrationSuccessfulAlert();
+            setTimeout(function(){
+                location.reload();
+            }, 3000)
         },
         error: function() {
-            // TODO - popup
+            showRegistrationFailAlert();
         }
     });
 }
@@ -27,11 +29,13 @@ function login() {
             'password': $('#loginInputPassword').val()
         },
         success: function(){
-            // TODO - popup
-            location.reload();
+            showLoginSuccessfulAlert();
+            setTimeout(function(){
+                location.reload();
+            }, 3000)
         },
         error: function() {
-            // TODO - popup
+            showLoginFailAlert();
         }
     });
 }
