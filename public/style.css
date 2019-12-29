@@ -10,6 +10,23 @@ body, nav-link, button {
     background-color: #ffffff;
 }
 
+/* Alert Css */
+.alert {
+    position: fixed;
+    width: 100%;
+}
+
+/* Modal Css for Alerts */
+.modal {
+    top: 80px;
+}
+
+.modal-backdrop
+{
+    opacity:5% !important;
+}
+
+/* Navigation */
 .navbar-nav a {
     font-variant-caps: small-caps;
 }
