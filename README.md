@@ -5,7 +5,7 @@
 
 ## Installation
 ### Prerequisites
-- nodejs
+- nodejs v13.5.0
 - npm
 - mysql-server
 
