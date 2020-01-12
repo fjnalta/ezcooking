@@ -8,7 +8,7 @@ function registerUser() {
                     'username' : $('#registerInputUsername').val(),
                     'email' : $('#registerInputEmail').val(),
                     'password' : $('#registerInputPassword1').val(),
-                    'password2' : $('#registerInputPasswort2').val(),
+                    'password2' : $('#registerInputPassword2').val(),
                     'token': token
                 },
                 success: function(){
