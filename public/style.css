@@ -18,7 +18,7 @@ body, nav-link, button {
 
 /* Modal Css for Alerts */
 .modal {
-    top: 80px;
+    overflow-y: auto !important;
 }
 
 .modal-backdrop
