@@ -1,5 +1,5 @@
 <!-- include static header -->
-<% include partials/header.ejs %>
+<%- include ('partials/header.ejs') -%>
 
 <!-- dynamic main content -->
 <div class="container">
@@ -10,7 +10,7 @@
         <!-- left menu -->
         <div class="col-sm-12 col-md-3">
             <!-- include left menu -->
-            <% include partials/left-menu.ejs %>
+            <%- include ('partials/left-menu.ejs') -%>
         </div>
 
         <% if(data[0] != undefined) { %>
@@ -63,6 +63,6 @@
     </div>
 </div>
 <!-- include static footer -->
-<% include partials/footer.ejs %>
+<%- include ('partials/footer.ejs') -%>
 <!-- spacing at content end -->
 <br>

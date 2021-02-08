@@ -47,10 +47,12 @@
 <body>
 
 <!-- include top navigation -->
-<% include navigation.ejs %>
+<%- include ('navigation.ejs') -%>
+
 
 <!-- include alerts -->
-<% include alerts.ejs %>
+<%- include ('alerts.ejs') -%>
+
 
 <!-- include Registration Modal -->
-<% include ../modals/register-modal.ejs %>
+<%- include ('../modals/register-modal.ejs') -%>

@@ -1,5 +1,5 @@
 <!-- include static header -->
-<% include partials/header.ejs %>
+<%- include ('partials/header.ejs') -%>
 
 <!-- Include additional scripts -->
 <script src="../public/js/admin/adminMenu.js"></script>
@@ -13,7 +13,7 @@
         <!-- left menu -->
         <div class="col-sm-12 col-md-3">
             <!-- include left menu -->
-            <% include partials/left-menu.ejs %>
+            <%- include ('partials/left-menu.ejs') -%>
         </div>
 
         <!-- main content -->
@@ -81,7 +81,7 @@
                                 </div>
                                 <div class="col-1">
                                     <p><button class="btn" data-toggle="modal" data-target="#addCategoryModal" onclick="setupAddCategoryModal()"><i class="fas fa-plus"></i></button></p>
-                                    <% include modals/admin/addCategoryModal.ejs %>
+                                    <%- include ('modals/admin/addCategoryModal.ejs') -%>
                                 </div>
                             </div>
 
@@ -204,6 +204,6 @@
 
 </div>
 <!-- include static footer -->
-<% include partials/footer.ejs %>
+<%- include ('partials/footer.ejs') -%>
 <!-- spacing at content end -->
 <br>
