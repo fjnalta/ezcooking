@@ -1,13 +1,13 @@
 <!-- include static header -->
-<%- include ('partials/header.ejs') -%>
+<%- include ('partials/header.ejs') %>
 
 <!-- Include additional scripts -->
-<script src="/../public/js/ajax/unitHandler.js"></script>
-<script src="/../public/js/dish/manageCategories.js"></script>
-<script src="/../public/js/dish/manageImageUpload.js"></script>
-<script src="/../public/js/dish/editDish.js"></script>
-<script src="/../public/js/grid/jsGrid.js"></script>
-<script src="/../public/js/dish/editor.js"></script>
+<script src="js/ajax/unitHandler.js"></script>
+<script src="js/dish/manageCategories.js"></script>
+<script src="js/dish/manageImageUpload.js"></script>
+<script src="js/dish/editDish.js"></script>
+<script src="js/grid/jsGrid.js"></script>
+<script src="js/dish/editor.js"></script>
 
 <!-- dynamic main content -->
 <div class="container">
@@ -18,7 +18,7 @@
         <!-- left menu -->
         <div class="col-sm-12 col-md-3">
             <!-- include left menu -->
-            <%- include ('partials/left-menu.ejs') -%>
+            <%- include ('partials/left-menu.ejs') %>
         </div>
         <!-- main content -->
         <div class="col-sm-12 col-md-9">
@@ -52,7 +52,7 @@
                             <br>
                             <!-- show image -->
                             <div class="float-right">
-                                <img src="/public/uploads/<%= data.image_name %>" class="img-thumbnail" alt="<%= data.image_name %>" id="uploadImage">
+                                <img src="uploads/<%= data.image_name %>" class="img-thumbnail" alt="<%= data.image_name %>" id="uploadImage">
                                 <label for="dishUploadImage">Bild bearbeiten</label>
                                 <br>
                                 <input type="file" class="form-control-file" id="dishUploadImage" onchange="loadImage(this)">
@@ -127,7 +127,7 @@
     </div>
 
 </div>
-<!-- include static footer -->
-<%- include ('partials/footer.ejs') -%>
-<!-- spacing at content end -->
-<br>
+
+<!-- include footer -->
+<%- include ('partials/bottom.ejs') %>
+<%- include ('partials/footer.ejs') %>

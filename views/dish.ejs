@@ -1,5 +1,5 @@
 <!-- include static header -->
-<%- include ('partials/header.ejs') -%>
+<%- include ('partials/header.ejs') %>
 
 
 <!-- dynamic main content -->
@@ -11,7 +11,7 @@
         <!-- left menu -->
         <div class="col-sm-12 col-md-3">
             <!-- include left menu -->
-            <%- include ('partials/left-menu.ejs') -%>
+            <%- include ('partials/left-menu.ejs') %>
         </div>
 
         <!-- main content -->
@@ -38,7 +38,7 @@
 
                     <div class="dropdown-divider"></div>
 
-                    <img src="/public/uploads/<%= data.image_name %>" class="img-thumbnail" id="dishImage">
+                    <img src="/uploads/<%= data.image_name %>" class="img-thumbnail" id="dishImage">
 
                     <div class="dropdown-divider"></div>
 
@@ -73,9 +73,7 @@
         </div>
     </div>
 </div>
-<!-- spacing between content and footer -->
-<br>
-<!-- include static footer -->
-<%- include ('partials/footer.ejs') -%>
-<!-- spacing at content end -->
-<br>
+
+<!-- include footer -->
+<%- include ('partials/bottom.ejs') %>
+<%- include ('partials/footer.ejs') %>

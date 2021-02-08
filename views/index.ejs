@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="de">
 <!-- include static header -->
-<%- include ('partials/header.ejs') -%>
+<%- include ('partials/header.ejs') %>
 
 <!-- dynamic main content -->
 <div class="container">
@@ -12,7 +12,7 @@
         <!-- left menu -->
         <div class="col-sm-12 col-md-3">
             <!-- include left menu -->
-            <%- include ('partials/left-menu.ejs') -%>
+            <%- include ('partials/left-menu.ejs') %>
         </div>
         <!-- main content -->
         <div class="col-sm-12 col-md-9">
@@ -35,7 +35,7 @@
                         <!-- populate items -->
                         <div class="col-xs-12 col-sm-4">
                             <div class="card">
-                                <a href="/dish/<%= data[i].id %>"><img src="/public/uploads/<%= data[i].image_name %>" class="card-img-top" id="indexCardImgTop" alt="<%= data[i].name %>"></a>
+                                <a href="/dish/<%= data[i].id %>"><img src="uploads/<%= data[i].image_name %>" class="card-img-top" id="indexCardImgTop" alt="<%= data[i].name %>"></a>
                                 <div class="card-body" id="indexCardBody">
                                     <p class="card-text"><%= data[i].name %></p>
                                     <div class="dropdown-divider"></div>
@@ -51,11 +51,7 @@
         </div>
     </div>
 </div>
-<!-- include static footer -->
-<%- include ('partials/footer.ejs') -%>
-<!-- spacing at content end -->
-<br>
-<!-- end body -->
-</body>
-<!-- end html -->
-</html>
+
+<!-- include footer -->
+<%- include ('partials/bottom.ejs') %>
+<%- include ('partials/footer.ejs') %>

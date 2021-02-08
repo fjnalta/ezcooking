@@ -1,8 +1,8 @@
 <!-- include static header -->
-<%- include ('partials/header.ejs') -%>
+<%- include ('partials/header.ejs') %>
 
 <!-- Include additional scripts -->
-<script src="../public/js/admin/adminMenu.js"></script>
+<script src="js/admin/adminMenu.js"></script>
 
 <!-- dynamic main content -->
 <div class="container">
@@ -13,7 +13,7 @@
         <!-- left menu -->
         <div class="col-sm-12 col-md-3">
             <!-- include left menu -->
-            <%- include ('partials/left-menu.ejs') -%>
+            <%- include ('partials/left-menu.ejs') %>
         </div>
 
         <!-- main content -->
@@ -73,7 +73,7 @@
                                 </div>
                                 <div class="col-3">
                                     Banner
-                                    <img src="/public/img/no_image" class="img-thumbnail" id="uploadCategoryImage">
+                                    <img src="/img/no_image" class="img-thumbnail" id="uploadCategoryImage">
                                     <input type="file" class="form-control-file" id="categoryUploadImage" onchange="loadCategoryImage(this)">
                                 </div>
                                 <div class="col-3">
@@ -81,7 +81,7 @@
                                 </div>
                                 <div class="col-1">
                                     <p><button class="btn" data-toggle="modal" data-target="#addCategoryModal" onclick="setupAddCategoryModal()"><i class="fas fa-plus"></i></button></p>
-                                    <%- include ('modals/admin/addCategoryModal.ejs') -%>
+                                    <%- include ('modals/admin/addCategoryModal.ejs') %>
                                 </div>
                             </div>
 
@@ -143,7 +143,7 @@
                                 </div>
                                 <div class="col-3">
                                     Bild hinzufügen
-                                    <img src="/public/img/no_image" class="img-thumbnail" id="uploadSubCategoryImage">
+                                    <img src="/img/no_image" class="img-thumbnail" id="uploadSubCategoryImage">
                                     <input type="file" class="form-control-file" id="subCategoryUploadImage" onchange="loadSubCategoryImage(this)">
                                 </div>
                                 <div class="col-3">
@@ -203,7 +203,7 @@
     </div>
 
 </div>
-<!-- include static footer -->
-<%- include ('partials/footer.ejs') -%>
-<!-- spacing at content end -->
-<br>
+
+<!-- include footer -->
+<%- include ('partials/bottom.ejs') %>
+<%- include ('partials/footer.ejs') %>

@@ -1,18 +1,20 @@
 <!-- HTML Header -->
 <head>
     <!-- general settings -->
-    <title>ezCooking</title>
+    <title>ezChef</title>
     <meta charset="utf-8">
-    <link rel="shortcut icon" type="image/x-icon" href="/public/img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- mobile first -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Set Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
+
+    <!-- Import Font -->
+    <link href='https://fonts.googleapis.com/css?family=Nunito:600' rel='stylesheet' type='text/css'>
+
+    <!-- import main stylesheet -->
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
 
     <!-- import jQuery and bootstrap -->
-    <!-- use modded bootstrap.css
-    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
-    -->
-    <link rel="stylesheet" href="/public/bootstrap.min.yeti.css" type="text/css">
     <script src="/node_modules/jquery/dist/jquery.min.js"></script>
     <script src="/node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -29,11 +31,8 @@
     <script src="/node_modules/summernote/dist/summernote.js"></script>
 
     <!-- frontend js -->
-    <script src="/public/js/sessionMgmt.js"></script>
-    <script src="/public/js/alertHandler.js"></script>
-
-    <!-- import main stylesheet -->
-    <link href="/public/style.css" rel="stylesheet" type="text/css">
+    <script src="/js/sessionMgmt.js"></script>
+    <script src="/js/alertHandler.js"></script>
 
     <!-- Google AdSense
     <script data-ad-client="ca-pub-4826635938982516" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -47,12 +46,12 @@
 <body>
 
 <!-- include top navigation -->
-<%- include ('navigation.ejs') -%>
+<%- include ('navigation.ejs') %>
 
 
 <!-- include alerts -->
-<%- include ('alerts.ejs') -%>
+<%- include ('alerts.ejs') %>
 
 
 <!-- include Registration Modal -->
-<%- include ('../modals/register-modal.ejs') -%>
+<%- include ('../modals/register-modal.ejs') %>

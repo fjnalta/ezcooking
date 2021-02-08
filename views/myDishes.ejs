@@ -1,8 +1,8 @@
 <!-- include static header -->
-<%- include ('partials/header.ejs') -%>
+<%- include ('partials/header.ejs') %>
 
 <!-- Include additional scripts -->
-<script src="../public/js/dish/deleteDish.js"></script>
+<script src="js/dish/deleteDish.js"></script>
 
 <!-- dynamic main content -->
 <div class="container">
@@ -13,7 +13,7 @@
         <!-- left menu -->
         <div class="col-sm-12 col-md-3">
             <!-- include left menu -->
-            <%- include ('partials/left-menu.ejs') -%>
+            <%- include ('partials/left-menu.ejs') %>
         </div>
 
         <!-- main content -->
@@ -29,7 +29,7 @@
                     <% for(let i=0;i<data.length;i++) { %>
                         <div class="row">
                             <div class="col-2">
-                                <a href="/dish/<%= data[i].id %>"><img src="/public/uploads/<%= data[i].image_name %>" alt="<%= data[i].name %>" class="img-thumbnail" id="myDishesImage"></a>
+                                <a href="/dish/<%= data[i].id %>"><img src="uploads/<%= data[i].image_name %>" alt="<%= data[i].name %>" class="img-thumbnail" id="myDishesImage"></a>
                             </div>
                             <div class="col-4">
                                 <p>
@@ -46,7 +46,7 @@
                                 Rezept bearbeiten: <a href="/dish/<%= data[i].id %>/edit"><button class="btn"><i class="fas fa-edit"></i></button></a>
                                 <!-- include delete modal -->
                                 Rezept löschen: <button class="btn" data-toggle="modal" data-target="#deleteDishModal<%= data[i].id %>"><i class="far fa-trash-alt"></i></button>
-                                <%- include ('modals/delete-dish-modal.ejs') -%>
+                                <%- include('modals/delete-dish-modal.ejs', { i : i}) %>
                                 </p>
                             </div>
                         </div>
@@ -59,7 +59,7 @@
     </div>
 
 </div>
-<!-- include static footer -->
-<%- include ('partials/footer.ejs') -%>
-<!-- spacing at content end -->
-<br>
+
+<!-- include footer -->
+<%- include ('partials/bottom.ejs') %>
+<%- include ('partials/footer.ejs') %>

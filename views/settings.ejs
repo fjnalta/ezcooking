@@ -1,8 +1,8 @@
 <!-- include static header -->
-<%- include ('partials/header.ejs') -%>
+<%- include ('partials/header.ejs') %>
 
 <!-- Include additional scripts -->
-<script src="../public/js/ajax/settingsLogic.js"></script>
+<script src="js/ajax/settingsLogic.js"></script>
 
 <!-- dynamic main content -->
 <div class="container">
@@ -13,7 +13,7 @@
         <!-- left menu -->
         <div class="col-sm-12 col-md-3">
             <!-- include left menu -->
-            <%- include ('partials/left-menu.ejs') -%>
+            <%- include ('partials/left-menu.ejs') %>
         </div>
 
         <!-- main content -->
@@ -46,7 +46,7 @@
                             <p>Name: <span class="badge badge-primary" id="settingsUsername"><%= session.username %></span></p>
                         </div>
                         <div class="col-2">
-                            <%- include ('modals/change-name-modal.ejs') -%>
+                            <%- include ('modals/change-name-modal.ejs') %>
                         </div>
                     </div>
 
@@ -55,7 +55,7 @@
                             <p>Email: <span class="badge badge-primary" id="settingsEmail"><%= session.email %></span></p>
                         </div>
                         <div class="col-2">
-                            <%- include ('modals/change-email-modal.ejs') -%>
+                            <%- include ('modals/change-email-modal.ejs') %>
                         </div>
                     </div>
 
@@ -67,13 +67,13 @@
                             <p>Passwort ändern</p>
                         </div>
                         <div class="col-2">
-                            <%- include ('modals/change-password-modal.ejs') -%>
+                            <%- include ('modals/change-password-modal.ejs') %>
                         </div>
                     </div>
 
                     <div class="dropdown-divider"></div>
                     <br>
-                        <%- include ('modals/delete-account-modal.ejs') -%>
+                        <%- include ('modals/delete-account-modal.ejs') %>
                     <br>
                 </div>
             </div>
@@ -81,7 +81,7 @@
 
     </div>
 </div>
-<!-- include static footer -->
-<%- include ('partials/footer.ejs') -%>
-<!-- spacing at content end -->
-<br>
+
+<!-- include footer -->
+<%- include ('partials/bottom.ejs') %>
+<%- include ('partials/footer.ejs') %>

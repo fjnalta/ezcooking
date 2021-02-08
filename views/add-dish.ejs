@@ -1,13 +1,13 @@
 <!-- include static header -->
-<%- include ('partials/header.ejs') -%>
+<%- include ('partials/header.ejs') %>
 
 <!-- Include additional scripts -->
-<script src="../public/js/ajax/unitHandler.js"></script>
-<script src="../public/js/dish/addDish.js"></script>
-<script src="../public/js/dish/manageCategories.js"></script>
-<script src="../public/js/dish/manageImageUpload.js"></script>
-<script src="../public/js/grid/jsGrid.js"></script>
-<script src="../public/js/dish/editor.js"></script>
+<script src="js/ajax/unitHandler.js"></script>
+<script src="js/dish/addDish.js"></script>
+<script src="js/dish/manageCategories.js"></script>
+<script src="js/dish/manageImageUpload.js"></script>
+<script src="js/grid/jsGrid.js"></script>
+<script src="js/dish/editor.js"></script>
 
 <!-- dynamic main content -->
 <div class="container">
@@ -18,7 +18,7 @@
         <!-- left menu -->
         <div class="col-sm-12 col-md-3">
             <!-- include left menu -->
-            <%- include ('partials/left-menu.ejs') -%>
+            <%- include ('partials/left-menu.ejs') %>
         </div>
 
         <!-- main content -->
@@ -56,7 +56,7 @@
                                 <label for="dishUploadImage">Upload Image</label>
                                 <br>
                                 <input type="file" class="form-control-file" id="dishUploadImage" onchange="loadImage(this)">
-                                <img id="uploadImage" src="/public/uploads/no_image" alt="uploaded Image" />
+                                <img id="uploadImage" src="/uploads/no_image" alt="uploaded Image" />
                             </div>
                         </div>
                     </div>
@@ -127,7 +127,7 @@
     </div>
 
 </div>
-<!-- include static footer -->
-<%- include ('partials/footer.ejs') -%>
-<!-- spacing at content end -->
-<br>
+
+<!-- include footer -->
+<%- include ('partials/bottom.ejs') %>
+<%- include ('partials/footer.ejs') %>
