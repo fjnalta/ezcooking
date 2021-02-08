@@ -1,5 +1,6 @@
 {
   "port": "3000",
+  "webContentDir" : "public",
   "mysql": {
     "host": "localhost",
     "user": "ezcooking",
