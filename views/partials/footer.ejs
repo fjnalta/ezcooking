@@ -1,23 +1,23 @@
-<!-- spacing between content and footer -->
-<br>
-<!-- start footer -->
-<div id="footer">
-    <!-- Copyright -->
-    <div class="container">
-        <ul class="list-group">
-            <li class="list-group-item">
-                <div class="row">
-                    <div class="col-4 text-left">
-                       Created by <a href="https://ezlife.eu/about"><b>Philipp Minges</b></a>
-                    </div>
-                    <div class="col-4 text-center">
-                        <b>build v<%= runtime.app.version %></b>
-                    </div>
-                    <div class="col-4 text-right">
-                        Designed by <a href="https://ezlife.eu/about"><b>ezlife.eu</b></a>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </div>
-</div>
+<!-- Include cookiealert script 
+<script src="/js/handleCookies.js"></script>
+-->
+
+<!-- Show Ads only if cookies are accepted 
+<script>
+    $(document).ready(function () {
+        if (getCookie("acceptCookies")) {
+            // Load Ads after page is fully faded in and all divs are visible
+            console.log('Loading Ads');
+            [].forEach.call(document.querySelectorAll('.adsbygoogle'), function () {
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            });
+        }
+    });
+</script>
+-->
+
+
+<!-- End Body -->
+</body>
+<!-- End HTML -->
+</html>
