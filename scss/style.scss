@@ -1,0 +1,249 @@
+$font-primary: 'Nunito', Arial, sans-serif;
+$primary: #333333;
+$hover: #000000;
+
+@import '../node_modules/bootstrap/scss/bootstrap';
+@import '../node_modules/bootstrap/scss/variables';
+@import '../node_modules/bootstrap/scss/mixins';
+
+/* Basic Container */
+.container {
+  background-color: #f8f9fa;
+  border: 2px solid #eeeeee;
+}
+
+body {
+  font-family: $font-primary;
+  font-size: 14px;
+  font-weight: normal;
+  background: #f2f2f2;
+}
+
+a {
+  transition: .3s all ease;
+  color: #7c7c7d;
+
+  &:hover, &:focus {
+    text-decoration: none !important;
+    outline: none !important;
+    box-shadow: none;
+  }
+}
+
+button {
+  transition: .3s all ease;
+
+  &:hover, &:focus {
+    text-decoration: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+}
+
+h1, h2, h3, h4, h5,
+.h1, .h2, .h3, .h4, .h5 {
+  line-height: 1.5;
+  font-weight: 400;
+  font-family: $font-primary;
+  color: $black;
+}
+
+#cookieImage {
+  max-width: 100px;
+}
+
+// Index Banners
+#serviceItem {
+  max-height: 150px;
+}
+
+// NavBar
+.navbar {
+  padding: 3px 10px;
+  background: $primary;
+  border: none;
+  border-radius: 0;
+
+  .nav-btn {
+    border-radius: 4px;
+    padding: 6px 8px;
+    margin: 0 2px;
+    color: white !important;
+  }
+
+  .nav-btn:hover {
+    background: $hover;
+  }
+
+  .btn-dark {
+    background: $primary;
+  }
+
+  .btn-sm {
+    margin: 3px 3px 3px 0;
+  }
+}
+
+.navbar-collapse {
+  text-align: center;
+}
+
+.nav-link.active {
+  background-color: $primary;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px dashed #ddd;
+  margin: 40px 0;
+}
+
+// Content Wrapper for Sidebar
+.sidebar-wrapper {
+  width: 100%;
+}
+
+// Sidebar
+#sidebar {
+  z-index: 4;
+  width: 60px;
+  text-align: center;
+  background: $primary;
+  color: #fff;
+
+  // sidebar logo
+  .logo {
+    display: block;
+    padding: 10px;
+    @include transition(.3s);
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+  }
+
+  ul {
+    // list items
+    li {
+      a {
+        padding: 10px 0;
+        display: block;
+        border-bottom: 1px solid rgba(255, 255, 255, .1);
+      }
+    }
+  }
+
+  // sidebar footer
+  .footer {
+    display: none;
+  }
+
+  // enable transitions
+  transition: all 0.3s;
+
+  a:hover {
+    background-color: $hover;
+  }
+
+  .sidebarButton {
+    max-width: 35px;
+    @include transition(.3s);
+  }
+
+  .sidebarButtonText {
+    font-size: 0;
+    @include transition(.3s);
+  }
+
+  .sidebar-separator {
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+  }
+
+  // expanded sidebar
+  &.active {
+    width: 200px;
+
+    .sidebarButton {
+      max-width: 35px;
+      @include transition(.3s);
+    }
+
+    .sidebarButtonText {
+      font-size: 13px;
+      text-align: left;
+      @include transition(.3s);
+    }
+
+    ul.components {
+      padding: 0;
+      @include transition(.3s);
+
+      li > a {
+        padding: 10px 30px;
+        display: block;
+        color: $white;
+        border-bottom: 1px solid rgba(255, 255, 255, .1);
+
+        span {
+          margin-right: 15px;
+          @include media-breakpoint-down(md) {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+  // disable sidebar by default on small devices
+  @include media-breakpoint-down(md) {
+    width: 60px;
+    text-align: center;
+    margin-left: -60px !important;
+    &.active {
+      margin-left: 0 !important;
+    }
+  }
+}
+
+// Site Content
+#content {
+  width: 100%;
+  padding: 0;
+  min-height: 100vh;
+  transition: all 0.3s;
+}
+
+#main-content, #signature {
+  display: none;
+}
+
+// Stream Toasts
+#myToast {
+  z-index: 3;
+  position: relative;
+}
+
+// Loading Spinner
+#loadingSpinner {
+  display: none;
+  z-index: 5;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  bottom: 50%;
+  right: 50%;
+}
+
+.resp-iframe {
+  position: absolute;
+  top: 0;
+  left: 55px;
+  width: 97%;
+  height: 100%;
+  border: 0;
+
+  // move to left border if sidebar is disabled
+  @include media-breakpoint-down(md) {
+    width: 100%;
+    left: 0;
+  }
+}
