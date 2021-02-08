@@ -9,10 +9,18 @@
     "port": "3306"
   },
   "runtime": {
-    "app":
-      {
-        "version": "0.1.5",
+    "app": {
+        "version": "0.2.0",
         "recaptcha": "6Lcu2MoUAAAAAJc2iMxExcM9s0-xNuJzkRWUd2rq"
-      }
+    },
+    "about" : {
+      "name" : "Philipp Minges",
+      "address" : "Marie-Curie-Weg 17",
+      "town" : "Bruchsal",
+      "postalCode" : 76646,
+      "country" : "Germany",
+      "homepage" : "ezlife.eu",
+      "email" : "fjnalta@gmail.com"
+    }
   }
 }
