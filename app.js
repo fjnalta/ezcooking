@@ -24,7 +24,7 @@ app.use(session({
 }));
 
 // Set static paths
-app.use('/public', express.static('public'));
+app.use(express.static(path.join(__dirname, config.webContentDir)));
 app.use('/node_modules', express.static('node_modules'));
 
 // Set routes
