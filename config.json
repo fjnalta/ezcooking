@@ -21,6 +21,18 @@
       "country" : "Germany",
       "homepage" : "ezlife.eu",
       "email" : "fjnalta@gmail.com"
-    }
+    },
+    "menu" : [
+      {
+        "id" : "home",
+        "name" : "Home",
+        "url" : "/"
+      },
+      {
+        "id" : "browse",
+        "name" : "Durchsuchen",
+        "url" : "/browse"
+      }
+    ]
   }
 }

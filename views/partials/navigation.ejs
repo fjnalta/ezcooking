@@ -1,46 +1,36 @@
 <!-- top navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="/"><img src="/img/favicon.ico" width="30" height="30"
-                                          class="d-inline-block align-top"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/browse">Durchsuchen</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="https://gitlab.ezlife.eu/ajo/ezcooking/issues">Bugtracker</a>
-            </li>
+<nav class="navbar-dark navbar navbar-expand-lg py-0">
+    <!-- Navbar Brand -->
+    <a class="navbar-brand" href="/"><img src="/img/ezcooking_logo.svg" width="30" height="30" class="d-inline-block align-top"></a>
 
+    <!-- Collapsible Content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto py-0">
+            <% for(let i=0; i<runtime.menu.length; i++) { %>
+                <li class="nav-item">
+                    <a class="nav-link btn-sm nav-btn ezlife-link" href="<%= runtime.menu[i].url %>"><%= runtime.menu[i].name %></a>
+                </li>
+            <% } %>
         </ul>
-    </div>
-    <ul class="navbar-nav navbar-right">
-        <!-- use css to create spacing between buttons -->
-        <div id="spacing-nav"></div>
-        <li class="nav-item dropdown">
-            <!-- TODO - configure typeahead
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-            -->
-        </li>
-        <!-- use css to create spacing between buttons -->
-        <div id="spacing-nav"></div>
         <% if(session) { %>
-            <li class="nav-item">
-                <button class="btn btn-danger" type="button" id="logoutBtn" onclick="logout()">Logout</button>
-            </li>
-        <% } else{ %>
-            <li class="nav-item">
-                <%- include ('../modals/login-modal.ejs') %>
-            </li>
+            <!--
+            <a class="nav-link btn-sm nav-btn ezlife-link" href="/settings"><%= session.preferred_username %></a>
+            -->
+            <a class="nav-link btn-sm nav-btn ezlife-link" href="/dish" style="background-color: #218838; border-color: #1e7e34; color: whitesmoke"><i class="fas fa-plus"></i> Gericht hinzufügen</a>
+            <a class="nav-link btn-sm nav-btn ezlife-link" href="/mydishes" ><i class="fas fa-folder-open"></i> Meine Rezepte</a>
+            <a class="nav-link btn-sm nav-btn ezlife-link" href="/settings"><i class="fas fa-cogs"></i> Einstellungen</a>
+            <% if(session.privileges == 'A') { %>
+                <a class="nav-link btn-sm nav-btn ezlife-link" href="/admin"><i class="fas fa-unlock-alt"></i> Admin Menü</a>
+            <% } %>
+            <a class="nav-link btn-sm nav-btn ezlife-link" href="#" style="background-color: #c82333; border-color: #bd2130; color: whitesmoke" onclick="logout()"><i class="fas fa-power-off"></i> Logout</a>
+        <% } else { %>
+            <%- include ('../modals/login-modal.ejs') %>
         <% } %>
-    </ul>
+    </div>
+
+    <!-- Toggle Button -->
+    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa fa-bars"></i>
+    </button>
 </nav>
