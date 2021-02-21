@@ -1,36 +1,51 @@
 const express = require('express');
 const session = require('express-session');
+const memoryStore = new session.MemoryStore();
+const Keycloak = require('keycloak-connect');
+
 const bodyParser = require('body-parser');
 const path = require('path');
 
+const config = require('./config');
+
 const router = require('./lib/router');
 
-const config = require('./config');
+// setup keycloak
+const keycloak = new Keycloak({store: memoryStore}, config.env.keycloak);
+
+// reference express app
 const app = express();
+
+// setup express session
+app.use(session({
+    secret: config.env.sessionSecret,
+    resave: false,
+    saveUninitialized: true,
+    store: memoryStore
+}));
+
+// configure webserver
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.static(path.join(__dirname, config.env.webContentDir)));
 
 // Use EJS as View Engine
 app.set('view engine','ejs');
 app.set('views',path.join(__dirname, 'views'));
 
-// Bodyparser for JSON and File Upload
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
+// reverse proxy configuration
+app.set('trust proxy', '127.0.0.1');
 
-// Session stuff
-app.use(session({
-   secret: 'adfiSHDFuhas7',
-   resave: false,
-   saveUninitialized: true
-}));
-
-// Set static paths
-app.use(express.static(path.join(__dirname, config.webContentDir)));
+// setup static path
 app.use('/node_modules', express.static('node_modules'));
 
-// Set routes
+// setup keycloak protected url's
+// TODO
+
+// setup public router
 app.use('/', router);
 
-// Start server
-app.listen(config.port,function () {
-    console.log('Server started at Port ' + config.port);
+// start server
+app.listen(config.env.port,function () {
+    console.log('Server started at Port ' + config.env.port);
 });

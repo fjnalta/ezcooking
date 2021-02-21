@@ -1,6 +1,20 @@
 {
-  "port": "3000",
-  "webContentDir" : "public",
+  "env" : {
+    "appBaseUrl" : "https://chef.ezlife.eu",
+    "webContentDir" : "public",
+    "port" : 3000,
+    "sessionSecret" : "adfiSHDFuhas7",
+    "keycloak" : {
+      "realm": "ezlife",
+      "auth-server-url": "https://kc.ezlife.eu/auth/",
+      "ssl-required": "external",
+      "resource": "ezchef",
+      "credentials" : {
+        "secret": "4bba6202-4403-4500-b57b-88cef5e2146e"
+      },
+      "confidential-port" : 0
+    }
+  },
   "mysql": {
     "host": "localhost",
     "user": "ezcooking",
