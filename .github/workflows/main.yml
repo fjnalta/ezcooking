@@ -18,7 +18,7 @@ jobs:
           passphrase: ${{ secrets.SSH_PASSPHRASE }}
           script: |
             echo "Change working directory"
-            cd ezchef
+            cd ezcooking
             echo "Update repository files"
             git reset --hard
             git pull origin master
