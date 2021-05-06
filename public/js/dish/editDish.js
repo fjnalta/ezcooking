@@ -20,6 +20,7 @@ function updateRecipe(id) {
     // Disable button to prevent double postings
     $("#buttonSendRecipe").prop('disabled', true);
 
+    // TODO - implement grecaptcha here
     // Ajax call to backend
     $.ajax({
         url: '/dish/' + id,
@@ -30,7 +31,6 @@ function updateRecipe(id) {
         type: 'POST',
         success: function(){
             // Redirect frontend
-//            location.replace(data);
             location.replace('/dish/' + id);
         }
     });

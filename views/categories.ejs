@@ -8,7 +8,6 @@
         <div class="col-sm-12">
             <div class="card">
                 <div class="col">
-                    <br>
                     <h1><%= data[0].name %></h1>
                     <div class="row">
                         <% for(let i=0;i<data.length;i++) { %>
@@ -22,7 +21,7 @@
                             <%  } %>
                             <div class="col-4">
                                 <div class="card">
-                                    <a href="/browse/<%= data[i].category %>/sub/<%= data[i].id %>"><img src="img/subCategories/<%= data[i].image_name %>" class="card-img-top"></a>
+                                    <a href="/browse/<%= data[i].category %>/sub/<%= data[i].id %>"><img src="/img/subCategories/<%= data[i].image_name %>" class="card-img-top"></a>
                                     <div class="card-body">
                                         <p class="card-text"><%= data[i].subname %></p>
                                     </div>

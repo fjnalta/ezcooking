@@ -13,18 +13,15 @@
             <% } %>
         </ul>
         <% if(session) { %>
-            <!--
-            <a class="nav-link btn-sm nav-btn ezlife-link" href="/settings"><%= session.preferred_username %></a>
-            -->
             <a class="nav-link btn-sm nav-btn ezlife-link" href="/dish" style="background-color: #218838; border-color: #1e7e34; color: whitesmoke"><i class="fas fa-plus"></i> Gericht hinzufügen</a>
             <a class="nav-link btn-sm nav-btn ezlife-link" href="/mydishes" ><i class="fas fa-folder-open"></i> Meine Rezepte</a>
             <a class="nav-link btn-sm nav-btn ezlife-link" href="/settings"><i class="fas fa-cogs"></i> Einstellungen</a>
             <% if(session.privileges == 'A') { %>
                 <a class="nav-link btn-sm nav-btn ezlife-link" href="/admin"><i class="fas fa-unlock-alt"></i> Admin Menü</a>
             <% } %>
-            <a class="nav-link btn-sm nav-btn ezlife-link" href="#" style="background-color: #c82333; border-color: #bd2130; color: whitesmoke" onclick="logout()"><i class="fas fa-power-off"></i> Logout</a>
+            <a class="nav-link btn-sm nav-btn ezlife-link" disabled><i class="fas fa-power-off"></i> <%= session.preferred_username %></a>
         <% } else { %>
-            <%- include ('../modals/login-modal.ejs') %>
+            <a class="nav-link btn-sm nav-btn ezlife-link" href="/settings"><i class="fas fa-cogs"></i> Login</a>
         <% } %>
     </div>
 

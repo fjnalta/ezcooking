@@ -1,9 +1,6 @@
 <!-- include static header -->
 <%- include ('partials/header.ejs') %>
 
-<!-- Include additional scripts -->
-<script src="js/ajax/settingsLogic.js"></script>
-
 <!-- main content -->
 <div class="container">
     <br>
@@ -20,10 +17,10 @@
                             <br>
                             <h2>Berechtigungen</h2>
                             <p>Berechtigungslevel:
-                                <% if(session.privileges == "U") { %>
-                                    <span style="float: right" class="badge badge-primary">User</span>
-                                <% } else { %>
+                                <% if(session.privileges == 'A') { %>
                                     <span style="float: right" class="badge badge-danger">Admin</span>
+                                <% } else { %>
+                                    <span style="float: right" class="badge badge-primary">User</span>
                                 <% } %>
                             </p>
                         </div>
@@ -34,19 +31,10 @@
                     <h2>Persönliche Daten</h2>
                     <div class="row">
                         <div class="col-10">
-                            <p>Name: <span class="badge badge-primary" id="settingsUsername"><%= session.username %></span></p>
-                        </div>
-                        <div class="col-2">
-                            <%- include ('modals/change-name-modal.ejs') %>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-10">
-                            <p>Email: <span class="badge badge-primary" id="settingsEmail"><%= session.email %></span></p>
-                        </div>
-                        <div class="col-2">
-                            <%- include ('modals/change-email-modal.ejs') %>
+                            <p>Benutzername: <%= session.preferred_username %></p>
+                            <p>Vorname: <%= session.given_name %></p>
+                            <p>Nachname: <%= session.family_name %></p>
+                            <p>Email: <%= session.email %></p>
                         </div>
                     </div>
 
@@ -57,19 +45,13 @@
                         <div class="col-10">
                             <p>Passwort ändern</p>
                         </div>
-                        <div class="col-2">
-                            <%- include ('modals/change-password-modal.ejs') %>
-                        </div>
                     </div>
 
-                    <div class="dropdown-divider"></div>
-                    <br>
-                        <%- include ('modals/delete-account-modal.ejs') %>
-                    <br>
                 </div>
             </div>
         </div>
     </div>
+    <br>
 </div>
 
 <!-- include footer -->

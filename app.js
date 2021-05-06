@@ -13,6 +13,9 @@ const router = require('./lib/router');
 // setup keycloak
 const keycloak = new Keycloak({store: memoryStore}, config.env.keycloak);
 
+// setup keycloak middleware
+const keycloakMiddleware = new (require('./lib/middleware/keycloakMiddleware'))();
+
 // reference express app
 const app = express();
 
@@ -23,6 +26,9 @@ app.use(session({
     saveUninitialized: true,
     store: memoryStore
 }));
+
+// setup keycloak middleware
+app.use(keycloak.middleware());
 
 // configure webserver
 app.use(bodyParser.json());
@@ -40,7 +46,11 @@ app.set('trust proxy', '127.0.0.1');
 app.use('/node_modules', express.static('node_modules'));
 
 // setup keycloak protected url's
-// TODO
+app.use('/settings', keycloak.protect());
+app.use('/myDishes', keycloak.protect());
+
+// setup keycloak to always check for session
+app.use(keycloakMiddleware.checkLogin);
 
 // setup public router
 app.use('/', router);

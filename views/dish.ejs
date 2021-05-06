@@ -18,7 +18,7 @@
                         <div class="col-3">
                             <p style="text-align: right">
                                 <i class="far fa-clock"></i> <%= data.duration %>min<br>
-                                <i class="far fa-user"></i> <a href="/user/<%= data.creator_id %>"><%= data.creator %></a>
+                                <i class="far fa-user"></i> <a href="/user/<%= data.creator %>"><%= data.creator %></a>
                                 <% if(session && session.privileges == 'A') { %>
                                 <br>
                                 <a href="/dish/<%= data.id %>/assign"><span class="badge badge-danger float-right">Rezept übernehmen</span></a>

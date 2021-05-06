@@ -2,12 +2,12 @@
 <%- include ('partials/header.ejs') %>
 
 <!-- Include additional scripts -->
-<script src="js/ajax/unitHandler.js"></script>
-<script src="js/dish/manageCategories.js"></script>
-<script src="js/dish/manageImageUpload.js"></script>
-<script src="js/dish/editDish.js"></script>
-<script src="js/grid/jsGrid.js"></script>
-<script src="js/dish/editor.js"></script>
+<script src="/js/ajax/unitHandler.js"></script>
+<script src="/js/dish/manageCategories.js"></script>
+<script src="/js/dish/manageImageUpload.js"></script>
+<script src="/js/dish/editDish.js"></script>
+<script src="/js/grid/jsGrid.js"></script>
+<script src="/js/dish/editor.js"></script>
 
 <!-- main content -->
 <div class="container">
@@ -44,7 +44,7 @@
                             <br>
                             <!-- show image -->
                             <div class="float-right">
-                                <img src="uploads/<%= data.image_name %>" class="img-thumbnail" alt="<%= data.image_name %>" id="uploadImage">
+                                <img src="/uploads/<%= data.image_name %>" class="img-thumbnail" alt="<%= data.image_name %>" id="uploadImage">
                                 <label for="dishUploadImage">Bild bearbeiten</label>
                                 <br>
                                 <input type="file" class="form-control-file" id="dishUploadImage" onchange="loadImage(this)">

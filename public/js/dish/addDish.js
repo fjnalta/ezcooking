@@ -30,5 +30,5 @@ function sendRecipe() {
     });
 
     // Disable button to prevent double postings
-    $("#buttonSendRecipe").prop('disabled', true);
+    //$("#buttonSendRecipe").prop('disabled', true);
 }

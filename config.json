@@ -24,7 +24,7 @@
   },
   "runtime": {
     "app": {
-        "version": "0.2.0",
+        "version": "0.3.0",
         "recaptcha": "6Lcu2MoUAAAAAJc2iMxExcM9s0-xNuJzkRWUd2rq"
     },
     "about" : {
