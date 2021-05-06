@@ -32,12 +32,11 @@
                                 <p><i class="far fa-clock"></i> <%= data[i].duration %> min.</p>
                             </div>
                             <div class="col-3">
-                                <p>
                                 Rezept bearbeiten: <a href="/dish/<%= data[i].id %>/edit"><button class="btn"><i class="fas fa-edit"></i></button></a>
+                                <br>
                                 <!-- include delete modal -->
                                 Rezept löschen: <button class="btn" data-toggle="modal" data-target="#deleteDishModal<%= data[i].id %>"><i class="far fa-trash-alt"></i></button>
                                 <%- include('modals/delete-dish-modal.ejs', { i : i}) %>
-                                </p>
                             </div>
                         </div>
                         <div class="dropdown-divider"></div>
