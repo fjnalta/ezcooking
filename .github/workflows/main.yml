@@ -1,0 +1,30 @@
+name: remote ssh command
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy commits
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          passphrase: ${{ secrets.SSH_PASSPHRASE }}
+          script: |
+            echo "Change working directory"
+            cd ezchef
+            echo "Update repository files"
+            git reset --hard
+            git pull origin master
+            echo "Setup Credentials"
+            cp ../scripts/ezchef-config.json ./config.json
+            echo "Install node modules"
+            npm install --save
+            echo "(Re)Start node app"
+            pm2 restart app.js
