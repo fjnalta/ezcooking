@@ -22,7 +22,7 @@ jobs:
             echo "Update repository files"
             git reset --hard
             git pull origin master
-            echo "Setup Credentials"
+            echo "Copy Config"
             cp ../scripts/ezchef-config.json ./config.json
             echo "Install node modules"
             npm install --save
