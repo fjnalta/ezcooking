@@ -1,6 +1,8 @@
 <!-- include static header -->
 <%- include ('partials/header.ejs') %>
 
+<!-- Include additional scripts -->
+<script src="/js/dish/dish.js"></script>
 
 <!-- main content -->
 <div class="container">
@@ -11,14 +13,16 @@
                 <div class="col">
                     <br>
                     <div class="row">
-                        <div class="col-9">
+                        <div class="col-8">
                             <h1><%= data.name %></h1>
                             <p><%= data.short_description %></p>
                         </div>
-                        <div class="col-3">
+                        <div class="col-4">
                             <p style="text-align: right">
-                                <i class="far fa-clock"></i> <%= data.duration %>min<br>
-                                <i class="far fa-user"></i> <a href="/user/<%= data.creator %>"><%= data.creator %></a>
+                                <i class="far fa-calendar-plus"></i> Hinzugefügt am <span id="creation_date"></span><br>
+                                <script>convertCreationDate(<%= data.creation_date %>)</script>
+                                <i class="far fa-clock"></i> Zubereitungsdauer: <%= data.duration %>min<br>
+                                <i class="far fa-user"></i> Author: <a href="/user/<%= data.creator %>"><%= data.creator %></a>
                                 <% if(session && session.privileges == 'A') { %>
                                 <br>
                                 <a href="/dish/<%= data.id %>/assign"><span class="badge badge-danger float-right">Rezept übernehmen</span></a>
@@ -35,19 +39,17 @@
 
                     <p><h2>Zutaten</h2></p>
 
-                    <table class="table table-striped">
+                    <table class="table table-sm table-striped">
                         <thead>
                         <tr>
-                            <th>#</th>
-                            <th>Einheit</th>
+                            <th>Menge</th>
                             <th>Zutat</th>
                         </tr>
                         </thead>
                         <tbody>
                             <% for(let i=0;i<data.ingredients.length;i++) { %>
                                 <tr>
-                                    <td><%= data.ingredients[i].count %></td>
-                                    <td><p data-toggle="tooltip" title="<%= data.ingredients[i].unit_name %>"><%= data.ingredients[i].short_name %></p></td>
+                                    <td><%= data.ingredients[i].count %> <span data-toggle="tooltip" title="<%= data.ingredients[i].unit_name %>"><%= data.ingredients[i].short_name %></span></td>
                                     <td><%= data.ingredients[i].name %></td>
                                 </tr>
                             <% } %>
