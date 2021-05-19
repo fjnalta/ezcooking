@@ -28,11 +28,8 @@
                         <div class="col-xs-12 col-sm-4">
                             <div class="card">
                                 <div class="embed-responsive embed-responsive-16by9">
-                                    <a href="/dish/<%= data[i].id %>"><img src="uploads/<%= data[i].image_name %>" class="card-img-top embed-responsive-item" id="indexCardImgTop" alt="<%= data[i].name %>"></a>
+                                    <a href="/dish/<%= data[i].id %>"><img src="uploads/<%= data[i].image_name %>" class="card-img-top embed-responsive-item" id="cardImg" alt="<%= data[i].name %>"></a>
                                 </div>
-                                <!--
-                                <a href="/dish/<%= data[i].id %>"><img src="uploads/<%= data[i].image_name %>" class="card-img-top" id="indexCardImgTop" alt="<%= data[i].name %>"></a>
-                                -->
                                 <div class="card-body" id="indexCardBody">
                                     <p class="card-text"><%= data[i].name %></p>
                                     <div class="dropdown-divider"></div>
