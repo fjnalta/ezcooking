@@ -22,7 +22,7 @@
                                 <i class="far fa-calendar-plus"></i> Hinzugefügt am <span id="creation_date"></span><br>
                                 <script>convertCreationDate(<%= data.creation_date %>)</script>
                                 <i class="far fa-clock"></i> Zubereitungsdauer: <%= data.duration %>min<br>
-                                <i class="far fa-user"></i> Author: <a href="/user/<%= data.creator %>"><%= data.creator %></a>
+                                <i class="far fa-user"></i> Autor: <a href="/user/<%= data.creator %>"><%= data.creator %></a>
                                 <% if(session && session.privileges == 'A') { %>
                                 <br>
                                 <a href="/dish/<%= data.id %>/assign"><span class="badge badge-danger float-right">Rezept übernehmen</span></a>
