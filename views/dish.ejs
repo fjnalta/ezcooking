@@ -1,44 +1,50 @@
 <!-- include static header -->
 <%- include ('partials/header.ejs') %>
 
-<!-- Include additional scripts -->
+<!-- include additional scripts -->
 <script src="/js/dish/dish.js"></script>
 
-<!-- main content -->
+<!-- heading -->
 <div class="container">
-    <br>
     <div class="row">
-        <div class="col-sm-12">
-            <div class="card">
-                <div class="col">
+        <div class="col-8">
+            <h1><%= data.name %></h1>
+            <p><%= data.short_description %></p>
+        </div>
+        <div class="col-4">
+            <br>
+            <p style="text-align: right">
+                <i class="far fa-calendar-plus"></i> Hinzugefügt am <span id="creation_date"></span><br>
+                <script>convertCreationDate(<%= data.creation_date %>)</script>
+                <i class="far fa-clock"></i> Zubereitungsdauer: <%= data.duration %>min<br>
+                <i class="far fa-user"></i> Autor: <a href="/user/<%= data.creator %>"><%= data.creator %></a>
+                <% if(session && session.privileges == 'A') { %>
                     <br>
-                    <div class="row">
-                        <div class="col-8">
-                            <h1><%= data.name %></h1>
-                            <p><%= data.short_description %></p>
-                        </div>
-                        <div class="col-4">
-                            <p style="text-align: right">
-                                <i class="far fa-calendar-plus"></i> Hinzugefügt am <span id="creation_date"></span><br>
-                                <script>convertCreationDate(<%= data.creation_date %>)</script>
-                                <i class="far fa-clock"></i> Zubereitungsdauer: <%= data.duration %>min<br>
-                                <i class="far fa-user"></i> Autor: <a href="/user/<%= data.creator %>"><%= data.creator %></a>
-                                <% if(session && session.privileges == 'A') { %>
-                                <br>
-                                <a href="/dish/<%= data.id %>/assign"><span class="badge badge-danger float-right">Rezept übernehmen</span></a>
-                                <% } %>
-                            </p>
-                        </div>
-                    </div>
+                    <a href="/dish/<%= data.id %>/assign"><span class="badge badge-danger float-right">Rezept übernehmen</span></a>
+                <% } %>
+            </p>
+        </div>
+    </div>
+</div>
 
-                    <div class="dropdown-divider"></div>
+<!-- image -->
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <br>
+            <img src="/uploads/<%= data.image_name %>" class="img-thumbnail" id="dishImage">
+            <br>
+        </div>
+    </div>
+</div>
 
-                    <img src="/uploads/<%= data.image_name %>" class="img-thumbnail" id="dishImage">
-
-                    <div class="dropdown-divider"></div>
-
-                    <p><h2>Zutaten</h2></p>
-
+<!-- ingredients -->
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Zutaten</h2>
+            <div class="row">
+                <div class="col">
                     <table class="table table-sm table-striped">
                         <thead>
                         <tr>
@@ -47,22 +53,26 @@
                         </tr>
                         </thead>
                         <tbody>
-                            <% for(let i=0;i<data.ingredients.length;i++) { %>
-                                <tr>
-                                    <td><%= data.ingredients[i].count %> <span data-toggle="tooltip" title="<%= data.ingredients[i].unit_name %>"><%= data.ingredients[i].short_name %></span></td>
-                                    <td><%= data.ingredients[i].name %></td>
-                                </tr>
-                            <% } %>
+                        <% for(let i=0;i<data.ingredients.length;i++) { %>
+                            <tr>
+                                <td><%= data.ingredients[i].count %> <span data-toggle="tooltip" title="<%= data.ingredients[i].unit_name %>"><%= data.ingredients[i].short_name %></span></td>
+                                <td><%= data.ingredients[i].name %></td>
+                            </tr>
+                        <% } %>
                         </tbody>
                     </table>
-
-                    <div class="dropdown-divider"></div>
-
-                    <p><h2>Zubereitung</h2></p>
-                    <p style="white-space: pre-line"><%- data.preparation %></p>
-                    <br>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+
+<!-- preparation -->
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Zubereitung</h2>
+            <p style="white-space: pre-line"><%- data.preparation %></p>
         </div>
     </div>
     <br>

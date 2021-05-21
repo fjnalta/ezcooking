@@ -1,41 +1,35 @@
 <!-- include static header -->
 <%- include ('partials/header.ejs') %>
 
-<!-- main content -->
+<!-- heading -->
 <div class="container">
-    <br>
     <div class="row">
-        <div class="col-sm-12">
-            <div class="card card-header">
-                Durchsuchen
-            </div>
-            <br>
-            <!-- include main content -->
-            <div class="card">
-                <div class="col">
-                    <br>
-                    <% for(let i=0;i<data.categories.length;i++) { %>
-                        <ul class="list-unstyled">
-                            <li><a href="/browse/<%= data.categories[i].id %>"><%= data.categories[i].category %></a> (<%= data.categories[i].count %>)</li>
-                            <% for(let j=0;j<data.subCategories.length;j++) { %>
-                                <% if(data.categories[i].id == data.subCategories[j].categoryId) { %>
-                                    <ul>
-                                        <li><a href="/browse/<%= data.categories[i].id %>/sub/<%= data.subCategories[j].id%>"><%= data.subCategories[j].subname %></a> (<%= data.subCategories[j].count %>)</li>
-                                    </ul>
-                                <% } %>
-                            <% } %>
-                            <!-- Insert divider until last category is reached -->
-                            <% if(i!=data.categories.length-1) { %>
-                                <div class="dropdown-divider"></div>
-                            <% } %>
-                        </ul>
+        <div class="col">
+            <h1 class="text-center">Durchsuchen</h1>
+        </div>
+    </div>
+</div>
+
+<!-- main content -->
+<% for(let i=0;i<data.categories.length;i++) { %>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <br>
+                <ul class="list-unstyled">
+                    <li><a href="/browse/<%= data.categories[i].id %>"><%= data.categories[i].category %></a> (<%= data.categories[i].count %>)</li>
+                    <% for(let j=0;j<data.subCategories.length;j++) { %>
+                        <% if(data.categories[i].id == data.subCategories[j].categoryId) { %>
+                            <ul>
+                                <li><a href="/browse/<%= data.categories[i].id %>/sub/<%= data.subCategories[j].id%>"><%= data.subCategories[j].subname %></a> (<%= data.subCategories[j].count %>)</li>
+                            </ul>
+                        <% } %>
                     <% } %>
-                </div>
+                </ul>
             </div>
         </div>
     </div>
-    <br>
-</div>
+<% } %>
 
 <!-- include footer -->
 <%- include ('partials/bottom.ejs') %>

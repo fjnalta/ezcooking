@@ -1,40 +1,77 @@
 <!-- include static header -->
 <%- include ('partials/header.ejs') %>
 
-<!-- main content -->
+<!-- heading -->
 <div class="container">
-    <br>
     <div class="row">
-        <div class="col-sm-12">
-            <div class="card">
-                <div class="col">
-                    <h1><%= data[0].name %></h1>
-                    <div class="row">
-                        <% for(let i=0;i<data.length;i++) { %>
-                            <!-- break after 3 items -->
-                            <%  if(i % 3 == 0) { %>
-                                </div>
-                                <!-- end first row items -->
-                                <br>
-                                <!-- next row items -->
-                                <div class="row">
-                            <%  } %>
-                            <div class="col-4">
-                                <div class="card">
-                                    <a href="/browse/<%= data[i].category %>/sub/<%= data[i].id %>"><img src="/img/subCategories/<%= data[i].image_name %>" class="card-img-top"></a>
-                                    <div class="card-body">
-                                        <p class="card-text"><%= data[i].subname %></p>
-                                    </div>
-                                </div>
+        <div class="col">
+            <h1 class="text-center"><%= categories[0].name %></h1>
+        </div>
+    </div>
+</div>
+
+<!-- sub categories -->
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2 class="text-center">weitere Kategorien</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="row">
+                <% for(let i = 0;i < categories.length;i++) { %>
+                    <div class="col-2">
+                        <div class="card">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <a href="/browse/<%= categories[i].category %>/sub/<%= categories[i].id %>"><img
+                                            src="/img/subCategories/<%= categories[i].image_name %>"
+                                            class="card-img-top embed-responsive-item" id="cardImg"></a>
                             </div>
-                        <% } %>
+                            <div class="card-body">
+                                <p class="card-text"><%= categories[i].subname %></p>
+                            </div>
+                        </div>
+                        <br>
                     </div>
-                    <br>
-                </div>
+                <% } %>
             </div>
         </div>
     </div>
-    <br>
+</div>
+
+<!-- recipes -->
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2 class="text-center">Rezepte</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="row">
+                <% for(let i = 0; i < data.length; i++) { %>
+                    <!-- populate items -->
+                    <div class="col-xs-12 col-sm-4">
+                        <div class="card">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <a href="/dish/<%= data[i].id %>"><img src="/uploads/<%= data[i].image_name %>" class="card-img-top embed-responsive-item" id="cardImg" alt="<%= data[i].name %>"></a>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text"><%= data[i].name %></p>
+                                <div class="dropdown-divider"></div>
+                                <p><small><%= data[i].short_description %></small></p>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+
 </div>
 
 <!-- include footer -->

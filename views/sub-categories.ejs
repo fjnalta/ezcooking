@@ -1,47 +1,52 @@
 <!-- include static header -->
 <%- include ('partials/header.ejs') %>
 
-<!-- main content -->
+<!-- heading -->
 <div class="container">
-    <br>
     <div class="row">
-        <div class="col-sm-12">
-            <div class="card">
-                <div class="col">
-                    <% if(data[0] != undefined) { %>
-                        <h1><%= data[0].catname %> - <%= data[0].subname %></h1>
-                        <div class="row">
-                            <% for(let i=0;i<data.length;i++) { %>
-                                <!-- break after 3 items -->
-                                <%  if(i % 3 == 0) { %>
-                                    </div>
-                                    <!-- end first row items -->
-                                    <br>
-                                    <!-- next row items -->
-                                    <div class="row">
-                                <%  } %>
-                                <div class="col-4">
-                                    <div class="card">
-                                        <a href="/dish/<%= data[i].id %>"><img src="/uploads/<%= data[i].image_name %>" class="card-img-top" id="indexCardImgTop"></a>
-                                        <div class="card-body" id="indexCardImgBody">
-                                            <p class="card-text"><%= data[i].name %></p>
-                                            <small><%= data[i].short_description %></small>
-                                        </div>
-                                    </div>
-                                </div>
-                            <% } %>
-                        </div>
-                    <!-- no content available -->
-                    <% } else { %>
-                        <h1>Bisher kein Rezept vorhanden</h1>
-                    <% } %>
-                    <br>
-                    <p><a href="/browse">Zurück</a></p>
-                </div>
-            </div>
+        <div class="col">
+            <h1 class="text-center"><%= data.category[0].category %> - <%= data.category[0].subcategory %></h1>
         </div>
     </div>
-    <br>
+</div>
+
+<!-- recipes -->
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <% if(data.dish[0] != undefined) { %>
+                <div class="row">
+                    <% for(let i=0;i<data.dish.length;i++) { %>
+                        <!-- break after 3 items -->
+                        <%  if(i % 3 == 0) { %>
+                </div>
+                <!-- end first row items -->
+                <br>
+                <!-- next row items -->
+                <div class="row">
+                    <%  } %>
+                    <div class="col-4">
+                        <div class="card">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <a href="/dish/<%= data.dish[i].id %>"><img src="/uploads/<%= data.dish[i].image_name %>" class="card-img-top embed-responsive-item" id="cardImg"></a>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text"><%= data.dish[i].name %></p>
+                                <small><%= data.dish[i].short_description %></small>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                    <% } %>
+                </div>
+                <!-- no content available -->
+            <% } else { %>
+                <br>
+                <h3>Kein Rezept vorhanden</h3>
+                <p><a href="/browse">Zurück</a></p>
+            <% } %>
+        </div>
+    </div>
 </div>
 
 <!-- include footer -->

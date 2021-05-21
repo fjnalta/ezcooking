@@ -1,119 +1,149 @@
 <!-- include static header -->
 <%- include ('partials/header.ejs') %>
 
-<!-- Include additional scripts -->
+<!-- include additional scripts -->
 <script src="js/ajax/unitHandler.js"></script>
 <script src="js/dish/addDish.js"></script>
-<script src="js/dish/manageCategories.js"></script>
 <script src="js/dish/manageImageUpload.js"></script>
 <script src="js/grid/jsGrid.js"></script>
 <script src="js/dish/editor.js"></script>
 
-<!-- main content -->
+<!-- heading -->
 <div class="container">
-    <br>
     <div class="row">
-        <div class="col-sm-12">
-            <div class="card card-header">
-                Gericht hinzufügen
+        <div class="col">
+            <h1 class="text-center">Rezept hinzufügen</h1>
+        </div>
+    </div>
+</div>
+
+<!-- general -->
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Allgemein</h2>
+            <div class="row">
+                <div class="col-9">
+                    <label for="dishInputName">Name</label>
+                    <input type="text" class="form-control" id="dishInputName" aria-describedby="dishNameHelp"
+                           placeholder="Enter name">
+                    <br>
+                    <label for="dishInputShortDescription">Kurzbeschreibung</label>
+                    <input type="text" class="form-control" id="dishInputShortDescription"
+                           aria-describedby="dishShortDescriptionHelp"
+                           placeholder="Enter short description">
+                </div>
+                <div class="col-3">
+                    <label for="dishInputDuration">Zubereitungsdauer</label>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" id="dishInputDuration"
+                               placeholder="Dauer" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <span class="input-group-text" id="basic-addon2">min</span>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="float-right">
+                        <label for="dishUploadImage">Upload Image</label>
+                        <br>
+                        <input type="file" class="form-control-file" id="dishUploadImage"
+                               onchange="loadImage(this)">
+                        <br>
+                        <img class="img-thumbnail" id="uploadImage" src="/uploads/no_image" alt="uploaded Image"/>
+                    </div>
+                </div>
             </div>
             <br>
-            <div class="card">
+        </div>
+    </div>
+</div>
+
+<!-- Category -->
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Kategorie</h2>
+            <div class="row">
                 <div class="col">
-                    <br>
-                    <h2>Allgemein</h2>
-                    <div class="row">
-                        <div class="col-9">
-                            <label for="dishInputName">Name</label>
-                            <input type="text" class="form-control" id="dishInputName" aria-describedby="dishNameHelp"
-                                   placeholder="Enter name">
-                            <br>
-                            <label for="dishInputShortDescription">Kurzbeschreibung</label>
-                            <input type="text" class="form-control" id="dishInputShortDescription"
-                                   aria-describedby="dishShortDescriptionHelp"
-                                   placeholder="Enter short description">
-                        </div>
-                        <div class="col-3">
-                            <label for="dishInputDuration">Zubereitungsdauer</label>
-                            <div class="input-group mb-3">
-                                <input type="text" class="form-control" id="dishInputDuration"
-                                       placeholder="Dauer" aria-describedby="basic-addon2">
-                                <div class="input-group-append">
-                                    <span class="input-group-text" id="basic-addon2">min</span>
-                                </div>
-                            </div>
-                            <br>
-                            <div class="float-right">
-                                <label for="dishUploadImage">Upload Image</label>
-                                <br>
-                                <input type="file" class="form-control-file" id="dishUploadImage" onchange="loadImage(this)">
-                                <img id="uploadImage" src="/uploads/no_image" alt="uploaded Image" />
-                            </div>
-                        </div>
-                    </div>
-
-                    <br>
-
-                    <div class="row">
-                        <div class="col-6">
-                            <div class="dropdown">
-                                <button class="btn btn-info dropdown-toggle" type="button" id="dropdownCategory"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Kategorie
-                                </button>
-                                <div class="dropdown-menu" id="dropdown-menu-category">
-                                    <script>loadMainCategories();</script>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="dropdown">
-                                <button class="btn btn-info dropdown-toggle" type="button" id="dropdownSubCategory"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled>
-                                    Sub-Kategorie
-                                </button>
-                                <div class="dropdown-menu" id="dropdown-menu-subcategory"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-
-                    <div class="dropdown-divider"></div>
-
-                    <h2>Zutaten</h2>
-                    <div class="row">
-                        <div class="col-12">
-                            <!-- Define jsGrid reference -->
-                            <div id="jsGrid"></div>
-                            <!-- Create Ingredients Table from jsGrid -->
-                            <script>createIngredientsTable();</script>
-                        </div>
-                    </div>
-
-                    <div class="dropdown-divider"></div>
-
-                    <h2>Zubereitung</h2>
-                    <label for="dishInputDescription">Beschreibung</label>
-                    <div class="row">
-                        <div class="col-12">
-                            <div id="dishInputDescription"></div>
-                        </div>
-                        <script>loadEditor();</script>
-                    </div>
-                    <br>
-                    <div class="dropdown-divider"></div>
-                    <div class="row">
-                        <div class="col-12">
-                            <button type="button" class="btn btn-primary float-right" id="buttonSendRecipe"
-                                    disabled onclick="sendRecipe();">Speichern
-                            </button>
-                        </div>
-                    </div>
+                    <select class="selectpicker"
+                            id="categorySelect"
+                            multiple
+                            data-selected-text-format="count"
+                            data-live-search="true"
+                            data-style="btn-info"
+                            data-size="10"
+                            title="wählen Sie Kategorien">
+                        <% for(let i = 0; i < categories['categories'].length; i++) { %>
+                            <optgroup label="<%= categories['categories'][i].name %>">
+                                <% for(let j = 0; j < categories['subCategories'].length; j++) { %>
+                                    <% if(categories['categories'][i].id == categories['subCategories'][j].category_id) { %>
+                                        <option value="<%= categories['subCategories'][j].category %>"><%= categories['subCategories'][j].name %></option>
+                                    <% } %>
+                                <% } %>
+                            </optgroup>
+                        <% } %>
+                    </select>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <div id="tags"></div>
                     <br>
                 </div>
             </div>
         </div>
     </div>
+</div>
+
+<!-- ingredients -->
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Zutaten</h2>
+            <div class="row">
+                <div class="col-12">
+                    <!-- Define jsGrid reference -->
+                    <div id="jsGrid"></div>
+                    <!-- Create Ingredients Table from jsGrid -->
+                    <script>createIngredientsTable();</script>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- description -->
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Zubereitung</h2>
+            <label for="dishInputDescription">Beschreibung</label>
+            <div class="row">
+                <div class="col-12">
+                    <div id="dishInputDescription"></div>
+                </div>
+                <script>loadEditor();</script>
+            </div>
+            <br>
+        </div>
+    </div>
+</div>
+
+<!-- save button -->
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <br>
+            <button type="button"
+                    class="btn btn-primary float-right"
+                    id="buttonSendRecipe"
+                    disabled
+                    onclick="sendRecipe();">Speichern
+            </button>
+        </div>
+    </div>
+    <br>
 </div>
 
 <!-- include footer -->

@@ -1,36 +1,31 @@
-<!DOCTYPE html>
-<html lang="de">
 <!-- include static header -->
 <%- include ('partials/header.ejs') %>
 
-<!-- main content -->
+<!-- heading -->
 <div class="container">
-    <br>
     <div class="row">
-        <div class="col-sm-12">
-            <!-- Heading -->
-            <div class="card card-header">
-                    Neue Rezepte
-            </div>
+        <div class="col">
+            <h1 class="text-center">Neue Rezepte</h1>
+        </div>
+    </div>
+</div>
+
+<!-- recipes -->
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <br>
             <% if(data[0]) { %>
                 <!-- first row items -->
                 <div class="row">
                 <% for(let i=0;i<data.length;i++) { %>
-                    <!-- break after 3 items -->
-                        <%  if(i % 3 == 0) { %>
-                            </div>
-                            <!-- end first row items -->
-                            <br>
-                            <!-- second row items -->
-                            <div class="row">
-                        <%  } %>
                         <!-- populate items -->
                         <div class="col-xs-12 col-sm-4">
                             <div class="card">
                                 <div class="embed-responsive embed-responsive-16by9">
                                     <a href="/dish/<%= data[i].id %>"><img src="uploads/<%= data[i].image_name %>" class="card-img-top embed-responsive-item" id="cardImg" alt="<%= data[i].name %>"></a>
                                 </div>
-                                <div class="card-body" id="indexCardBody">
+                                <div class="card-body">
                                     <p class="card-text"><%= data[i].name %></p>
                                     <div class="dropdown-divider"></div>
                                         <p><small><%= data[i].short_description %></small></p>

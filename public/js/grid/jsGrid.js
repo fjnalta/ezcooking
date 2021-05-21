@@ -48,7 +48,6 @@ async function createFilledIngredientsTable(id) {
         type: 'GET',
         url: '/ingredients/' + id,
         success: function (msg) {
-            console.log(msg);
             let ingredients = [];
             for(let i=0;i<msg.ingredients.length;i++) {
                 ingredients.push({ Name: msg.ingredients[i].name, Menge: msg.ingredients[i].count, Einheit: msg.ingredients[i].count_unit });
