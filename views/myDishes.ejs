@@ -1,10 +1,10 @@
 <!-- include static header -->
 <%- include ('partials/header.ejs') %>
 
-<!-- Include additional scripts -->
+<!-- include additional scripts -->
 <script src="js/dish/deleteDish.js"></script>
 
-<!-- main content -->
+<!-- heading -->
 <div class="container">
     <div class="row">
         <div class="col">
@@ -19,7 +19,7 @@
         <div class="row">
             <div class="col-2">
                 <a href="/dish/<%= data[i].id %>"><img src="uploads/<%= data[i].image_name %>" alt="<%= data[i].name %>"
-                                                       class="img-thumbnail" id="myDishesImage"></a>
+                                                       class="img-thumbnail"></a>
             </div>
             <div class="col-4">
                 <p>
@@ -28,7 +28,7 @@
                 </p>
             </div>
             <div class="col-3">
-                <!-- Duration -->
+                <!-- duration -->
                 <p><i class="far fa-clock"></i> <%= data[i].duration %> min.</p>
             </div>
             <div class="col-3">
