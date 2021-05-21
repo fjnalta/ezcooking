@@ -11,7 +11,12 @@
                     <a class="nav-link btn-sm nav-btn ezlife-link" href="<%= runtime.menu[i].url %>"><%= runtime.menu[i].name %></a>
                 </li>
             <% } %>
+            <!-- Typeahead search -->
+            <form class="form-inline my-1">
+                <input class="form-control-sm typeahead" type="text" placeholder="Suchen" aria-label="Search">
+            </form>
         </ul>
+
         <% if(session) { %>
             <a class="nav-link btn-sm nav-btn ezlife-link" href="/dish" style="background-color: #218838; border-color: #1e7e34; color: whitesmoke"><i class="fas fa-plus"></i> Rezept hinzufügen</a>
             <a class="nav-link btn-sm nav-btn ezlife-link" href="/mydishes" ><i class="fas fa-folder-open"></i> Meine Rezepte</a>

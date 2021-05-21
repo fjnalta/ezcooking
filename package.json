@@ -31,6 +31,7 @@
     "promise-mysql": "^5.0.2",
     "request": "^2.88.0",
     "summernote": "^0.8.18",
-    "tether": "^1.4.7"
+    "tether": "^1.4.7",
+    "typeahead.js": "^0.11.1"
   }
 }
