@@ -76,6 +76,13 @@ h1, h2, h3, h4, h5,
   margin-right: auto;
 }
 
+/* Sub Categories  */
+#subCategoryImage {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+}
+
 // NavBar
 .navbar {
   padding: 3px 10px;
