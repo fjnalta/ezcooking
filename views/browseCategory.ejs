@@ -1,0 +1,36 @@
+<!-- include static header -->
+<%- include ('partials/header.ejs') %>
+
+<!-- heading -->
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1 class="text-center">Durchsuchen</h1>
+        </div>
+    </div>
+</div>
+
+<!-- main content -->
+<% for(let i=0;i<data.categories.length;i++) { %>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <br>
+                <ul class="list-unstyled">
+                    <li><a href="/category/<%= data.categories[i].id %>"><%= data.categories[i].category %></a> (<%= data.categories[i].count %>)</li>
+                    <% for(let j=0;j<data.subCategories.length;j++) { %>
+                        <% if(data.categories[i].id == data.subCategories[j].categoryId) { %>
+                            <ul>
+                                <li><a href="/category/<%= data.categories[i].id %>/sub/<%= data.subCategories[j].id%>"><%= data.subCategories[j].subname %></a> (<%= data.subCategories[j].count %>)</li>
+                            </ul>
+                        <% } %>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+    </div>
+<% } %>
+
+<!-- include footer -->
+<%- include ('partials/bottom.ejs') %>
+<%- include ('partials/footer.ejs') %>

@@ -11,26 +11,74 @@
 </div>
 
 <!-- main content -->
-<% for(let i=0;i<data.categories.length;i++) { %>
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <br>
-                <ul class="list-unstyled">
-                    <li><a href="/browse/<%= data.categories[i].id %>"><%= data.categories[i].category %></a> (<%= data.categories[i].count %>)</li>
-                    <% for(let j=0;j<data.subCategories.length;j++) { %>
-                        <% if(data.categories[i].id == data.subCategories[j].categoryId) { %>
-                            <ul>
-                                <li><a href="/browse/<%= data.categories[i].id %>/sub/<%= data.subCategories[j].id%>"><%= data.subCategories[j].subname %></a> (<%= data.subCategories[j].count %>)</li>
-                            </ul>
-                        <% } %>
-                    <% } %>
-                </ul>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <br>
+            <!-- first row items -->
+            <div class="row">
+                <% for(let i = 0;i < data.length;i++) { %>
+                    <!-- populate items -->
+                    <div class="col-xs-12 col-sm-4">
+                        <div class="card">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <a href="/dish/<%= data[i].id %>"><img src="uploads/<%= data[i].image_name %>"
+                                                                       class="card-img-top embed-responsive-item"
+                                                                       id="cardImg" alt="<%= data[i].name %>"></a>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text"><%= data[i].name %></p>
+                                <div class="dropdown-divider"></div>
+                                <p>
+                                    <small><%= data[i].short_description %></small>
+                                </p>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                <% } %>
             </div>
         </div>
     </div>
-<% } %>
 
-<!-- include footer -->
-<%- include ('partials/bottom.ejs') %>
-<%- include ('partials/footer.ejs') %>
+    <!-- Pagination -->
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            <% if(pageInfo.curPage == 1) { %>
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+            <% } else { %>
+                <li class="page-item">
+                    <a class="page-link" href="/browse?page=<%= pageInfo.prevPage %>" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+            <% } %>
+
+            <% for(let i=1; i<=pageInfo.maxPages; i++) { %>
+                <li class="page-item"><a class="page-link" href="/browse?page=<%= i %>"><%= i %></a></li>
+            <% } %>
+
+            <% if(pageInfo.curPage == pageInfo.maxPages) { %>
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            <% } else { %>
+                <li class="page-item">
+                    <a class="page-link" href="/browse?page=<%= pageInfo.nextPage %>" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            <% } %>
+
+        </ul>
+    </nav>
+
+    <!-- include footer -->
+    <%- include ('partials/bottom.ejs') %>
+    <%- include ('partials/footer.ejs') %>

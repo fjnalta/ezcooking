@@ -45,7 +45,12 @@
       {
         "id" : "browse",
         "name" : "Durchsuchen",
-        "url" : "/browse"
+        "url" : "browse"
+      },
+      {
+        "id" : "browseCategory",
+        "name" : "Kategorien",
+        "url" : "/category"
       }
     ]
   }
