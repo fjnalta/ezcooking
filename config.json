@@ -1,31 +1,31 @@
 {
   "env" : {
-    "appBaseUrl" : "https://chef.ezlife.eu",
+    "appBaseUrl" : "<baseURL>",
     "webContentDir" : "public",
     "port" : 3000,
-    "sessionSecret" : "adfiSHDFuhas7",
+    "sessionSecret" : "<secret>",
     "keycloak" : {
-      "realm": "ezlife",
-      "auth-server-url": "https://kc.ezlife.eu/auth/",
+      "realm": "<keycloak-realm>",
+      "auth-server-url": "<keycloak-server-url/auth",
       "ssl-required": "external",
-      "resource": "ezchef",
+      "resource": "<keycloak-resource>",
       "credentials" : {
-        "secret": "4bba6202-4403-4500-b57b-88cef5e2146e"
+        "secret": "<keycloak-secret>"
       },
       "confidential-port" : 0
     }
   },
   "mysql": {
-    "host": "localhost",
-    "user": "ezcooking",
-    "password": "ezcookingpw",
-    "database": "ezcooking",
+    "host": "<mysql-host>",
+    "user": "<mysql-user>",
+    "password": "<mysql-pw>",
+    "database": "<mysql-database>",
     "port": "3306"
   },
   "runtime": {
     "app": {
         "version": "0.3.0",
-        "recaptcha": "6Lcu2MoUAAAAAJc2iMxExcM9s0-xNuJzkRWUd2rq"
+        "recaptcha": "<recaptcha-key>"
     },
     "about" : {
       "name" : "Philipp Minges",
@@ -33,8 +33,7 @@
       "town" : "Bruchsal",
       "postalCode" : 76646,
       "country" : "Germany",
-      "homepage" : "ezlife.eu",
-      "email" : "fjnalta@gmail.com"
+      "homepage" : "ezlife.eu"
     },
     "menu" : [
       {
