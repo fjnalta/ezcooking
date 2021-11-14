@@ -1,57 +1,61 @@
 <!-- include static header -->
 <%- include ('partials/header.ejs') %>
 
+<!-- heading -->
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1 class="text-center">Einstellungen</h1>
+        </div>
+    </div>
+</div>
+
 <!-- main content -->
 <div class="container">
-    <br>
     <div class="row">
-        <div class="col-sm-12">
-            <div class="card card-header">
-                Einstellungen
-            </div>
+        <div class="col">
             <br>
-            <div class="card">
-                <div class="col">
-                    <div class="row">
-                        <div class="col">
-                            <br>
-                            <h2>Berechtigungen</h2>
-                            <p>Berechtigungslevel:
-                                <% if(session.privileges == 'A') { %>
-                                    <span style="float: right" class="badge badge-danger">Admin</span>
-                                <% } else { %>
-                                    <span style="float: right" class="badge badge-primary">User</span>
-                                <% } %>
-                            </p>
-                        </div>
-                    </div>
+            <h2>Berechtigungen</h2>
+            <p>Berechtigungslevel:
+                <% if(session.privileges == 'A') { %>
+                    <span style="float: right" class="badge badge-danger">Admin</span>
+                <% } else { %>
+                    <span style="float: right" class="badge badge-primary">User</span>
+                <% } %>
+            </p>
+        </div>
+    </div>
+</div>
 
-                    <div class="dropdown-divider"></div>
-
-                    <h2>Persönliche Daten</h2>
-                    <div class="row">
-                        <div class="col-10">
-                            <p>Benutzername: <%= session.preferred_username %></p>
-                            <p>Vorname: <%= session.given_name %></p>
-                            <p>Nachname: <%= session.family_name %></p>
-                            <p>Email: <%= session.email %></p>
-                        </div>
-                    </div>
-
-                    <div class="dropdown-divider"></div>
-
-                    <h2>Passwort</h2>
-                    <div class="row">
-                        <div class="col-10">
-                            <p>Passwort ändern</p>
-                        </div>
-                    </div>
-
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <br>
+            <h2>Persönliche Daten</h2>
+            <div class="row">
+                <div class="col-10">
+                    <p>Benutzername: <%= session.preferred_username %></p>
+                    <p>Vorname: <%= session.given_name %></p>
+                    <p>Nachname: <%= session.family_name %></p>
+                    <p>Email: <%= session.email %></p>
                 </div>
             </div>
         </div>
     </div>
-    <br>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <br>
+            <h2>Passwort</h2>
+            <div class="row">
+                <div class="col-10">
+                    <p>Passwort ändern</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!-- include footer -->

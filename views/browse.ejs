@@ -58,7 +58,7 @@
                 </li>
             <% } %>
 
-            <% for(let i=1; i<=pageInfo.maxPages; i++) { %>
+            <% for(let i = 1; i <= pageInfo.maxPages; i++) { %>
                 <li class="page-item"><a class="page-link" href="/browse?page=<%= i %>"><%= i %></a></li>
             <% } %>
 
@@ -75,10 +75,10 @@
                     </a>
                 </li>
             <% } %>
-
         </ul>
     </nav>
+</div>
 
-    <!-- include footer -->
-    <%- include ('partials/bottom.ejs') %>
-    <%- include ('partials/footer.ejs') %>
+<!-- include footer -->
+<%- include ('partials/bottom.ejs') %>
+<%- include ('partials/footer.ejs') %>
