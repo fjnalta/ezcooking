@@ -61,6 +61,11 @@ h1, h2, h3, h4, h5,
   object-fit: cover;
 }
 
+#categoryImg {
+  object-fit: cover;
+  max-height: 200px;
+}
+
 /* Add Dish / Edit Dish / AdminMenu */
 #uploadImage, #uploadCategoryImage, #uploadSubCategoryImage {
   max-width: 150px;
