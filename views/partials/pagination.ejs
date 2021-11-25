@@ -1,0 +1,36 @@
+<!-- Pagination -->
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+        <% if(pageInfo.curPage == 1) { %>
+            <li class="page-item disabled">
+                <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+        <% } else { %>
+            <li class="page-item">
+                <a class="page-link" href="?page=<%= pageInfo.prevPage %>" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+        <% } %>
+
+        <% for(let i = 1; i <= pageInfo.maxPages; i++) { %>
+            <li class="page-item"><a class="page-link" href="?page=<%= i %>"><%= i %></a></li>
+        <% } %>
+
+        <% if(pageInfo.curPage == pageInfo.maxPages) { %>
+            <li class="page-item disabled">
+                <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        <% } else { %>
+            <li class="page-item">
+                <a class="page-link" href="?page=<%= pageInfo.nextPage %>" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        <% } %>
+    </ul>
+</nav>
