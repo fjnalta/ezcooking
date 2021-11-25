@@ -10286,4 +10286,8 @@ span.twitter-typeahead {
   top: 2.375rem !important;
 }
 
+.tt-hint {
+  left: unset !important;
+}
+
 /*# sourceMappingURL=style.css.map */
