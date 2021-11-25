@@ -19,6 +19,10 @@ body {
   background: #f2f2f2;
 }
 
+.text-responsive {
+  font-size: calc(100% + 1vw + 1vh);
+}
+
 a {
   transition: .3s all ease;
   color: #7c7c7d;

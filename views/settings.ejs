@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <h1 class="text-center">Einstellungen</h1>
+            <h1 class="text-center text-responsive">Einstellungen</h1>
         </div>
     </div>
 </div>
@@ -15,7 +15,7 @@
     <div class="row">
         <div class="col">
             <br>
-            <h2>Berechtigungen</h2>
+            <h2 class="text-responsive">Berechtigungen</h2>
             <p>Berechtigungslevel:
                 <% if(session.privileges == 'A') { %>
                     <span style="float: right" class="badge badge-danger">Admin</span>
@@ -31,7 +31,7 @@
     <div class="row">
         <div class="col">
             <br>
-            <h2>Persönliche Daten</h2>
+            <h2 class="text-responsive">Persönliche Daten</h2>
             <div class="row">
                 <div class="col-10">
                     <p>Benutzername: <%= session.preferred_username %></p>
@@ -48,7 +48,7 @@
     <div class="row">
         <div class="col">
             <br>
-            <h2>Passwort</h2>
+            <h2 class="text-responsive">Passwort</h2>
             <div class="row">
                 <div class="col-10">
                     <p>Passwort ändern</p>

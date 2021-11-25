@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <h1 class="text-center">Kategorien</h1>
+            <h1 class="text-center text-responsive">Kategorien</h1>
         </div>
     </div>
 </div>
@@ -16,7 +16,7 @@
         <div class="row">
             <div class="col">
                 <br>
-                <h2><a href="/category/<%= data.categories[i].id %>"><%= data.categories[i].category %></a>
+                <h2 class="text-responsive"><a href="/category/<%= data.categories[i].id %>"><%= data.categories[i].category %></a>
                     (<%= data.categories[i].count %>)</h2>
                 <img src="/img/categories/<%= data.categories[i].image_name %>"
                      class="card-img-top embed-responsive-item" id="categoryImg">

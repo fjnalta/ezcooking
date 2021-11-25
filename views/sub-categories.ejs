@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <h1 class="text-center"><%= data.category[0].category %> - <%= data.category[0].subcategory %></h1>
+            <h1 class="text-center text-responsive"><%= data.category[0].category %> - <%= data.category[0].subcategory %></h1>
             <img src="/img/subCategories/<%= data.category[0].image_name %>" class="img-thumbnail" id="subCategoryImage">
         </div>
     </div>
@@ -44,7 +44,7 @@
                 <!-- no content available -->
             <% } else { %>
                 <br>
-                <h3>Kein Rezept vorhanden</h3>
+                <h3 class="text-responsive">Kein Rezept vorhanden</h3>
                 <p><a href="/category">Zurück</a></p>
             <% } %>
         </div>
