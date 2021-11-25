@@ -10235,16 +10235,10 @@ span.twitter-typeahead .tt-menu {
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 0.25rem;
 }
-@media (max-width: 768px) {
-  .dropdown-menu, span.twitter-typeahead .tt-menu {
-    /* CSS goes here */
-    min-width: 300px;
-  }
-}
 @media (max-width: 400px) {
   .dropdown-menu, span.twitter-typeahead .tt-menu {
-    min-width: 200px;
-    max-width: 350px;
+    min-width: 90%;
+    max-width: 99%;
   }
 }
 

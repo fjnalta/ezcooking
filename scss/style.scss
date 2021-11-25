@@ -303,14 +303,9 @@ span.twitter-typeahead .tt-menu {
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 0.25rem;
 
-  @media (max-width: 768px) {
-    /* CSS goes here */
-    min-width: 300px;
-  }
-
   @media (max-width: 400px) {
-    min-width: 200px;
-    max-width: 350px;
+    min-width: 90%;
+    max-width: 99%;
   }
 }
 
@@ -357,7 +352,6 @@ span.twitter-typeahead {
 .input-group span.twitter-typeahead .tt-menu {
   top: 2.375rem !important;
 }
-
 .tt-hint {
   left: unset !important;
 }
